@@ -1,1 +1,115 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --background: #1a0e1f;
+  --primaryAccent: #ff4f5a;
+  --secondaryAccent: #ffb3b3;
+  --textSecondary: #e0e0e0;
+  --textPrimary: #b18cb0;
+  --cardBackground: #0e0812;
+  --bordersDividers: #333;
+  --borderGlow: #ff007a;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: .5em; 
+    color: var(--textPrimary);
+    background-color: var(--background);
+  }
+  
+  .app-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    border: solid var(--bordersDividers);
+    border-radius: 1em;
+    background-color: var(--cardBackground);
+    box-shadow: 0 0 1px var(--borderGlow), 0 0 2px var(--borderGlow);
+  }
+  
+  
+
+.main-content {
+  flex: 1;
+  padding: 1em;
+}
+
+
+app-footer {
+  flex-shrink: 0;
+}
+
+.gradient {
+  background: linear-gradient(
+    90deg,
+    var(--textSecondary),
+    var(--primaryAccent),
+    var(--secondaryAccent)
+  );
+  background-size: 300%;
+  background-position: left;
+  transition: background-position 1s ease-in-out;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+a.gradient:hover,
+a.gradient:hover > * {
+  background-position: right;
+}
+
+.gradient.border {
+  border: 2px solid transparent;
+  background-position: left;
+  border-image: linear-gradient(
+    90deg,
+    var(--textSecondary),
+    var(--primaryAccent),
+    var(--secondaryAccent)
+  );
+  border-image-slice: 1;
+}
+
+.gradient.border:hover {
+  background-position: right;
+}
+
+a {
+  color: var(--textSecondary);
+}
+
+a:hover {
+  color: var(--secondaryAccent);
+  cursor: pointer;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon:hover {
+  color: var(--secondaryAccent);
+  cursor: pointer;
+}
+
+.card {
+  background-color: var(--cardBackground);
+}
+
+ul {
+  list-style-type: none;
+}

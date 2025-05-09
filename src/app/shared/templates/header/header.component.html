@@ -1,0 +1,19 @@
+<header>
+  <div class="gradient">
+    <h1 class="gradient">{{ headerInfo.title }}</h1>
+    <p class="gradient">{{ headerInfo.tagline }}</p>
+  </div>
+  <nav>
+    @if (isLoggedIn()) {
+    <a class="icon gradient">
+      <i class="fas fa-user"></i>
+    </a>
+    } @else {
+    <ul>
+      <li>
+        <a class="gradient border">Login</a>
+      </li>
+    </ul>
+    }
+  </nav>
+</header>

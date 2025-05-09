@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+ul {
+    display: flex;
+justify-content: space-evenly;
+}
+
+li {
+    margin: 0 .5em;
+    
+}
+
+li a {
+    padding: .5em 1em;
+}
+
+
+
+i {
+    font-size: 1.5em;
+}
+
