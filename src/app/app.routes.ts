@@ -11,38 +11,38 @@ import { HomeComponent } from './pages/home/home.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SettingsComponent } from './pages/settings/settings.component';
+import { JobComponent } from './pages/jobs/job/job.component';
 
 export const routes: Routes = [
-    {
-      path: '',
-      component: LandingComponent,
-      canActivate: [redirectIfLoggedInGuard]
-    },
-    {
-      path: 'dashboard',
-      component: DashboardComponent,
-      canActivate: [authGuard],
-      children: [
-        {path: '', redirectTo: 'new', pathMatch: 'full'},
-        {path: 'new', component: NewComponent},
-        {path: 'calendar', component: CalendarComponent},
-        {path: 'home', component: HomeComponent},
-        {path: 'jobs', component: JobsComponent},
-        {path: 'profile', component: ProfileComponent},
-        {path: 'settings', component: SettingsComponent},
-
+  {
+    path: '',
+    component: LandingComponent,
+    canActivate: [redirectIfLoggedInGuard],
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [authGuard],
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'new', component: NewComponent },
+      { path: 'calendar', component: CalendarComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'jobs', component: JobsComponent },
+      { path: 'job/:id', component: JobComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'settings', component: SettingsComponent },
     ],
-    },
-    {
-      path: 'signup',
-      component: SignUpComponent,
-      canActivate: [redirectIfLoggedInGuard],
-    },
-    {
-      path: 'signin',
-      component: SignInComponent,
-      canActivate: [redirectIfLoggedInGuard],
-    },
-    { path: '**', redirectTo: 'signin' },
-  ];
-  
+  },
+  {
+    path: 'signup',
+    component: SignUpComponent,
+    canActivate: [redirectIfLoggedInGuard],
+  },
+  {
+    path: 'signin',
+    component: SignInComponent,
+    canActivate: [redirectIfLoggedInGuard],
+  },
+  { path: '**', redirectTo: 'signin' },
+];

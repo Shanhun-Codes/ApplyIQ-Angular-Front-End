@@ -10,6 +10,7 @@ export class AuthService {
   router = inject(Router);
   http = inject(HttpClient);
   isLoggedIn = signal<boolean>(false);
+  currentUser = signal<string>('')
 
   private baseUrl: string = 'http://localhost:3000';
 
@@ -67,6 +68,7 @@ export class AuthService {
               sessionStorage.setItem('jwt', token);
             }
             this.checkTokenAndUpdateStatus();
+            this.currentUser.set(user)
             resolve();
           },
           error: (err) => {

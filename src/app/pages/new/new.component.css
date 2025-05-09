@@ -16,7 +16,14 @@ a {
     font-size: 1.5em;
     min-height: 1.5em;
     min-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
+
+a:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 8px var(--primaryAccent);
+  }
 
 i {
     margin: .5em .25em .5em .5em;

@@ -87,6 +87,7 @@
   
   a:hover {
     color: var(--secondaryAccent);
+    
     cursor: pointer;
   }
   
@@ -288,4 +289,25 @@
     background-color: var(--borderGlow) !important;
     color: var(--background) !important;
   }
+
+  .status-applied {
+    color: var(--textPrimary);
+  }
+  
+  .status-interview {
+    color: #ffc107; 
+    font-weight: bold;
+  }
+  
+  .status-rejected {
+    color: #ff4f5a; 
+    text-decoration: line-through;
+  }
+  
+  .status-offer {
+    color: #4caf50; 
+    font-weight: bold;
+  }
+
+  
   

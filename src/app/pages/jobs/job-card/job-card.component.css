@@ -1,16 +1,31 @@
 article {
-    border: solid .25px var(--bordersDividers);
-    background-color: var(--background);
-    margin-bottom: .5em;
-    padding: .25em;
-    border-radius: 7.5px;
+  border: solid 0.25px var(--bordersDividers);
+  background-color: var(--background);
+  margin-bottom: 0.75em;
+  padding: 0.25em;
+  border-radius: 7.5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+a details div span {
+  color: var(--textPrimary);
+}
+
+a article:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 8px var(--primaryAccent);
+}
 
 .details {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: space-between;
 }
+
 span {
-    margin-right: 1em;
+  margin-right: 1em;
 }
+
+.rejected {
+    color: #ff4f5a; 
+    text-decoration: line-through;
+  }

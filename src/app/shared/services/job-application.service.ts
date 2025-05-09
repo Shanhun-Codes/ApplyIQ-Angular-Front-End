@@ -23,4 +23,8 @@ getJobCardData(): JobCard[] {
     status: j.status,
   }));
 }
+
+getJobApplicationById(id: number) {
+  return this.jobData().filter((j) => j.id == id)[0]
+}
 }
