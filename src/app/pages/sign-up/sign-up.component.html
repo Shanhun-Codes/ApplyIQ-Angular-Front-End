@@ -1,0 +1,24 @@
+<section>
+    <form action="submit" #form (submit)="$event.preventDefault()">
+        <label for="email" class="gradient">Email:</label>
+        <input type="text" name="email" class="border-gradient" autofocus required/>
+      
+        <label for="password" class="gradient">Password:</label>
+        <input type="password" name="Password" class="border-gradient" required />
+      
+        <label for="password_confirmation" class="gradient">Confirm Password:</label>
+        <input type="password" name="email" class="border-gradient" required/>
+
+        <div class="button-container">
+          <button class="gradient border" type="submit">Sign Up</button>
+        </div>
+
+      </form>
+      <div class="account-message">
+        <p>
+          Already have an account?
+          <a class="gradient" routerLink="/sign-in">Click here</a>
+        </p>
+      </div>
+      
+</section>

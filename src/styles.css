@@ -18,31 +18,41 @@
   box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: .5em; 
-    color: var(--textPrimary);
-    background-color: var(--background);
-  }
-  
-  .app-layout {
-    display: flex;
-    flex-direction: column;
-    height: 100%; 
-    border: solid var(--bordersDividers);
-    border-radius: 1em;
-    background-color: var(--cardBackground);
-    box-shadow: 0 0 1px var(--borderGlow), 0 0 2px var(--borderGlow);
-  }
-  
-  
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0.5em;
+  color: var(--textPrimary);
+  background-color: var(--background);
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: solid var(--bordersDividers);
+  border-radius: 1em;
+  background-color: var(--cardBackground);
+  box-shadow: 0 0 1px var(--borderGlow), 0 0 2px var(--borderGlow);
+}
 
 .main-content {
   flex: 1;
   padding: 1em;
 }
 
+section {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%; 
+  }
 
 app-footer {
   flex-shrink: 0;
@@ -64,6 +74,7 @@ app-footer {
   color: transparent;
 }
 
+button.gradient,
 a.gradient:hover,
 a.gradient:hover > * {
   background-position: right;
@@ -112,4 +123,95 @@ a:hover {
 
 ul {
   list-style-type: none;
+}
+
+.border-gradient {
+    border: 2px solid transparent;
+    border-radius: 0.5em; /* optional */
+    background-image: linear-gradient(#1a0e1f, #1a0e1f), linear-gradient(90deg, #ff007a, #550976);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1.5em;
+    margin: 1em;
+}
+
+label {
+    margin-bottom: .25em;
+}
+
+
+input {
+    margin-bottom: 1em;
+    font-size: .75em;
+    padding: .25em .5em;
+    border-radius: 5px;
+    color: var(--textPrimary);
+    background-color: var(--background);
+    min-width: 300px;
+}
+
+input:focus {
+    border-color: var(--borderGlow); 
+    outline: none; 
+    box-shadow: 0 0 0 2px var(--borderGlow); 
+  }
+  
+ .border-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 2px; /* border thickness */
+  overflow: hidden;
+  z-index: 0;
+}
+
+.border-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 100deg,
+    var(--primaryAccent) 100deg 120deg,
+    var(--secondaryAccent) 120deg 140deg,
+    transparent 140deg 360deg
+  );
+  animation: rotateBorder 2s linear infinite;
+  z-index: 0;
+  pointer-events: none; 
+}
+
+.animated-button {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0.5em 1.25em;
+  background-color: var(--cardBackground);
+  color: var(--textPrimary);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.animated-button:hover {
+  color: var(--secondaryAccent);
+}
+
+.border-wrapper:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 6px var(--primaryAccent), 0 0 12px var(--secondaryAccent);
+  border-radius: 10px;
+}
+
+@keyframes rotateBorder {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

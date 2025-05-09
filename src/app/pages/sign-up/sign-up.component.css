@@ -1,0 +1,12 @@
+
+.button-container {
+    text-align: center;
+}
+
+button {
+    padding: .5em 1em;
+}
+
+.account-message {
+    text-align: center;
+}
