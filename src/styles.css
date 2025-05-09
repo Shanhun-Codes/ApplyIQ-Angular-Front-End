@@ -20,37 +20,47 @@
   *::after {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
   }
   
-  html,
-  body {
-    height: 100%;
+  html, body {
+    height: 100vh;
     min-height: 520px;
     margin: 0;
-    padding: 0.5em;
+    padding: 0.5em; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
     color: var(--textPrimary);
+    font-weight: lighter;
     background-color: var(--background);
+    box-sizing: border-box;
   }
-  
-  /* ==========================================================================
-     Layout & Structure
+
+    /* ==========================================================================
+     Main Layout
      ========================================================================== */
+  
   .app-layout {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    box-sizing: border-box;
+    height: 100%; 
     border: solid var(--bordersDividers);
     border-radius: 1em;
     background-color: var(--cardBackground);
     box-shadow: 0 0 1px var(--borderGlow), 0 0 2px var(--borderGlow);
+
   }
   
   .main-content {
-    flex: 1;
+    flex: 1 1 auto;
     padding: 1em;
+    overflow-y: auto;
+    min-height: 0; 
   }
+  
+  app-footer {
+    flex-shrink: 0;
+  }
+  
   
   section {
     flex: 1 1 auto;
@@ -62,13 +72,14 @@
     box-sizing: border-box;
   }
   
-  app-footer {
-    flex-shrink: 0;
-  }
-  
   /* ==========================================================================
      Typography & Links
      ========================================================================== */
+     h1, h2,h3,h4,h5 {
+        font-weight: lighter;
+        color: var(--textSecondary);
+    }
+
   a {
     color: var(--textSecondary);
     text-decoration: none;
@@ -249,7 +260,9 @@
   .mdc-text-field--filled {
     min-height: min-content !important;
     max-width: 125px;
-    margin-left: 1.5em;
+    margin: .5em 0 0 1.5em;
+    background-color: var(--background);
+    border: solid var(--bordersDividers);
   }
   
   /* Select panel dropdown */

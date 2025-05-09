@@ -1,127 +1,276 @@
 export default [
-    {
-      id: 1,
-      title: "Frontend Developer",
-      company: "Techify Inc.",
-      location: "Remote",
-      source: "LinkedIn",
-      url: "https://www.linkedin.com/jobs/view/123456",
-      dateApplied: "2025-05-05T14:00:00Z",
-      status: "applied",
-      notes: "Angular-heavy stack. Looks promising.",
-      tags: ["Angular", "Tailwind", "Remote", "Mid-Level"],
-      resumeId: "resume_001.pdf",
-      coverLetter: {
-        id: "cl_001",
-        content: "Dear Techify team, I'm excited about this opportunity because...",
-        generated: true
-      },
-      jobDescription: "We're looking for a frontend developer with strong Angular experience...",
-      aiInsights: {
-        matchScore: 92,
-        suggestedSkills: ["RxJS", "NgRx", "Accessibility"],
-        toneSuggestions: "Keep the tone friendly and confident."
-      },
-      emailTracking: {
-        threadId: "gmail-thread-1",
-        lastEmailSnippet: "Thanks for applying. We’ll review your application.",
-        lastUpdatedFromEmail: "2025-05-06T10:45:00Z"
-      },
-      createdAt: "2025-05-05T13:30:00Z",
-      updatedAt: "2025-05-06T11:00:00Z",
-      userId: 7
+  {
+    id: 1,
+    title: 'Frontend Developer',
+    company: 'Techify Inc.',
+    location: 'Remote',
+    source: 'LinkedIn',
+    url: 'https://www.linkedin.com/jobs/view/123456',
+    dateApplied: '2025-05-05T14:00:00Z',
+    status: 'applied',
+    jobType: 'Full-time',
+    notes: 'Angular-heavy stack. Looks promising.',
+    tags: ['Angular', 'Tailwind', 'Remote', 'Mid-Level'],
+    resumeId: 'resume_001.pdf',
+    coverLetter: {
+      id: 'cl_001',
+      content:
+        "Dear Techify team, I'm excited about this opportunity because...",
+      generated: true,
     },
-    {
-      id: 2,
-      title: "Full Stack Engineer",
-      company: "Nebula Labs",
-      location: "Austin, TX",
-      source: "Indeed",
-      url: "https://www.indeed.com/viewjob?jk=abcdef123",
-      dateApplied: "2025-04-30T09:00:00Z",
-      status: "interview",
-      tags: ["React", "Node.js", "AWS", "PostgreSQL"],
-      resumeId: "resume_002.pdf",
-      coverLetter: {
-        id: "cl_002",
-        content: "I'm excited to bring my full stack expertise to Nebula Labs...",
-        generated: true
-      },
-      jobDescription: "Seeking a full stack developer with experience in AWS and React...",
-      aiInsights: {
-        matchScore: 88,
-        suggestedSkills: ["Docker", "CI/CD", "TypeScript"]
-      },
-      emailTracking: {
-        threadId: "gmail-thread-2",
-        lastEmailSnippet: "We'd like to invite you for a first-round interview.",
-        lastUpdatedFromEmail: "2025-05-01T15:30:00Z"
-      },
-      createdAt: "2025-04-29T17:00:00Z",
-      updatedAt: "2025-05-01T16:00:00Z",
-      userId: 7
+    jobDescription:
+      "We're looking for a frontend developer with strong Angular experience...",
+    aiInsights: {
+      matchScore: 92,
+      suggestedSkills: ['RxJS', 'NgRx', 'Accessibility'],
+      toneSuggestions: 'Keep the tone friendly and confident.',
     },
-    {
-      id: 3,
-      title: "Junior Web Developer",
-      company: "Creative Sparks",
-      location: "Kansas City, MO",
-      source: "Company Site",
-      url: "https://careers.creativesparks.com/jobs/7890",
-      dateApplied: "2025-05-01T11:15:00Z",
-      status: "rejected",
-      notes: "Smaller agency. Might revisit later.",
-      tags: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-      resumeId: "resume_003.pdf",
-      coverLetter: {
-        id: "cl_003",
-        content: "As a passionate developer, I’m excited about your mission at Creative Sparks...",
-        generated: true
-      },
-      jobDescription: "Looking for a junior developer to assist with web design and development...",
-      aiInsights: {
-        matchScore: 75,
-        suggestedSkills: ["SEO", "jQuery"]
-      },
-      emailTracking: {
-        threadId: "gmail-thread-3",
-        lastEmailSnippet: "We have decided to proceed with other candidates.",
-        lastUpdatedFromEmail: "2025-05-03T08:20:00Z"
-      },
-      createdAt: "2025-04-30T10:00:00Z",
-      updatedAt: "2025-05-03T08:30:00Z",
-      userId: 7
+    emailTracking: {
+      threadId: 'gmail-thread-1',
+      lastEmailSnippet: 'Thanks for applying. We’ll review your application.',
+      lastUpdatedFromEmail: '2025-05-06T10:45:00Z',
     },
-    {
-      id: 4,
-      title: "React Native Mobile Developer",
-      company: "Pulse Apps",
-      location: "Remote",
-      source: "AngelList",
-      url: "https://angel.co/company/pulseapps/jobs/987654",
-      dateApplied: "2025-05-02T18:45:00Z",
-      status: "offer",
-      notes: "Waiting on final offer letter.",
-      tags: ["React Native", "TypeScript", "iOS", "Android"],
-      resumeId: "resume_004.pdf",
-      coverLetter: {
-        id: "cl_004",
-        content: "I’m thrilled about the opportunity to work with Pulse Apps on mobile innovation...",
-        generated: true
-      },
-      jobDescription: "We’re hiring a React Native engineer to work across iOS and Android platforms...",
-      aiInsights: {
-        matchScore: 94,
-        suggestedSkills: ["Native Modules", "Expo", "Redux"]
-      },
-      emailTracking: {
-        threadId: "gmail-thread-4",
-        lastEmailSnippet: "We’re preparing your official offer letter now.",
-        lastUpdatedFromEmail: "2025-05-04T13:00:00Z"
-      },
-      createdAt: "2025-05-02T18:00:00Z",
-      updatedAt: "2025-05-04T13:15:00Z",
-      userId: 7
-    }
-  ];
+    createdAt: '2025-05-05T13:30:00Z',
+    updatedAt: '2025-05-06T11:00:00Z',
+    userId: 7,
+  },
+  {
+    id: 2,
+    title: 'Full Stack Engineer',
+    company: 'Nebula Labs',
+    location: 'Austin, TX',
+    source: 'Indeed',
+    url: 'https://www.indeed.com/viewjob?jk=abcdef123',
+    dateApplied: '2025-04-30T09:00:00Z',
+    status: 'interview',
+    jobType: 'Full-time',
+    tags: ['React', 'Node.js', 'AWS', 'PostgreSQL'],
+    resumeId: 'resume_002.pdf',
+    coverLetter: {
+      id: 'cl_002',
+      content: "I'm excited to bring my full stack expertise to Nebula Labs...",
+      generated: true,
+    },
+    jobDescription:
+      'Seeking a full stack developer with experience in AWS and React...',
+    aiInsights: {
+      matchScore: 88,
+      suggestedSkills: ['Docker', 'CI/CD', 'TypeScript'],
+    },
+    emailTracking: {
+      threadId: 'gmail-thread-2',
+      lastEmailSnippet: "We'd like to invite you for a first-round interview.",
+      lastUpdatedFromEmail: '2025-05-01T15:30:00Z',
+    },
+    createdAt: '2025-04-29T17:00:00Z',
+    updatedAt: '2025-05-01T16:00:00Z',
+    userId: 7,
+  },
+  {
+    id: 3,
+    title: 'Junior Web Developer',
+    company: 'Creative Sparks',
+    location: 'Kansas City, MO',
+    source: 'Company Site',
+    url: 'https://careers.creativesparks.com/jobs/7890',
+    dateApplied: '2025-05-01T11:15:00Z',
+    status: 'rejected',
+    jobType: 'Contract',
+    notes: 'Smaller agency. Might revisit later.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+    resumeId: 'resume_003.pdf',
+    coverLetter: {
+      id: 'cl_003',
+      content:
+        'As a passionate developer, I’m excited about your mission at Creative Sparks...',
+      generated: true,
+    },
+    jobDescription:
+      'Looking for a junior developer to assist with web design and development...',
+    aiInsights: {
+      matchScore: 75,
+      suggestedSkills: ['SEO', 'jQuery'],
+    },
+    emailTracking: {
+      threadId: 'gmail-thread-3',
+      lastEmailSnippet: 'We have decided to proceed with other candidates.',
+      lastUpdatedFromEmail: '2025-05-03T08:20:00Z',
+    },
+    createdAt: '2025-04-30T10:00:00Z',
+    updatedAt: '2025-05-03T08:30:00Z',
+    userId: 7,
+  },
+  {
+    id: 4,
+    title: 'React Native Mobile Developer',
+    company: 'Pulse Apps',
+    location: 'Remote',
+    source: 'AngelList',
+    url: 'https://angel.co/company/pulseapps/jobs/987654',
+    dateApplied: '2025-05-02T18:45:00Z',
+    status: 'offer',
+    jobType: 'Full-time',
+    notes: 'Waiting on final offer letter.',
+    tags: ['React Native', 'TypeScript', 'iOS', 'Android'],
+    resumeId: 'resume_004.pdf',
+    coverLetter: {
+      id: 'cl_004',
+      content:
+        'I’m thrilled about the opportunity to work with Pulse Apps on mobile innovation...',
+      generated: true,
+    },
+    jobDescription:
+      'We’re hiring a React Native engineer to work across iOS and Android platforms...',
+    aiInsights: {
+      matchScore: 94,
+      suggestedSkills: ['Native Modules', 'Expo', 'Redux'],
+    },
+    emailTracking: {
+      threadId: 'gmail-thread-4',
+      lastEmailSnippet: 'We’re preparing your official offer letter now.',
+      lastUpdatedFromEmail: '2025-05-04T13:00:00Z',
+    },
+    createdAt: '2025-05-02T18:00:00Z',
+    updatedAt: '2025-05-04T13:15:00Z',
+    userId: 7,
+  },
+  {
+    id: 5,
+    title: 'Frontend Developer',
+    company: 'Techify Inc.',
+    location: 'Remote',
+    source: 'LinkedIn',
+    url: 'https://www.linkedin.com/jobs/view/123456',
+    dateApplied: '2025-05-05T14:00:00Z',
+    status: 'applied',
+    jobType: 'Full-time',
+    notes: 'Angular-heavy stack. Looks promising.',
+    tags: ['Angular', 'Tailwind', 'Remote', 'Mid-Level'],
+    resumeId: 'resume_001.pdf',
+    coverLetter: {
+      id: 'cl_001',
+      content:
+        "Dear Techify team, I'm excited about this opportunity because...",
+      generated: true,
+    },
+    jobDescription:
+      "We're looking for a frontend developer with strong Angular experience...",
+    aiInsights: {
+      matchScore: 92,
+      suggestedSkills: ['RxJS', 'NgRx', 'Accessibility'],
+      toneSuggestions: 'Keep the tone friendly and confident.',
+    },
+    emailTracking: {
+      threadId: 'gmail-thread-1',
+      lastEmailSnippet: 'Thanks for applying. We’ll review your application.',
+      lastUpdatedFromEmail: '2025-05-06T10:45:00Z',
+    },
+    createdAt: '2025-05-05T13:30:00Z',
+    updatedAt: '2025-05-06T11:00:00Z',
+    userId: 7,
+  },
+  {
+    id: 6,
+    title: 'Full Stack Engineer',
+    company: 'Nebula Labs',
+    location: 'Austin, TX',
+    source: 'Indeed',
+    url: 'https://www.indeed.com/viewjob?jk=abcdef123',
+    dateApplied: '2025-04-30T09:00:00Z',
+    status: 'interview',
+    jobType: 'Full-time',
+    tags: ['React', 'Node.js', 'AWS', 'PostgreSQL'],
+    resumeId: 'resume_002.pdf',
+    coverLetter: {
+      id: 'cl_002',
+      content: "I'm excited to bring my full stack expertise to Nebula Labs...",
+      generated: true,
+    },
+    jobDescription:
+      'Seeking a full stack developer with experience in AWS and React...',
+    aiInsights: {
+      matchScore: 88,
+      suggestedSkills: ['Docker', 'CI/CD', 'TypeScript'],
+    },
+    emailTracking: {
+      threadId: 'gmail-thread-2',
+      lastEmailSnippet: "We'd like to invite you for a first-round interview.",
+      lastUpdatedFromEmail: '2025-05-01T15:30:00Z',
+    },
+    createdAt: '2025-04-29T17:00:00Z',
+    updatedAt: '2025-05-01T16:00:00Z',
+    userId: 7,
+  },
+  {
+    id: 7,
+    title: 'Junior Web Developer',
+    company: 'Creative Sparks',
+    location: 'Kansas City, MO',
+    source: 'Company Site',
+    url: 'https://careers.creativesparks.com/jobs/7890',
+    dateApplied: '2025-05-01T11:15:00Z',
+    status: 'rejected',
+    jobType: 'Contract',
+    notes: 'Smaller agency. Might revisit later.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+    resumeId: 'resume_003.pdf',
+    coverLetter: {
+      id: 'cl_003',
+      content:
+        'As a passionate developer, I’m excited about your mission at Creative Sparks...',
+      generated: true,
+    },
+    jobDescription:
+      'Looking for a junior developer to assist with web design and development...',
+    aiInsights: {
+      matchScore: 75,
+      suggestedSkills: ['SEO', 'jQuery'],
+    },
+    emailTracking: {
+      threadId: 'gmail-thread-3',
+      lastEmailSnippet: 'We have decided to proceed with other candidates.',
+      lastUpdatedFromEmail: '2025-05-03T08:20:00Z',
+    },
+    createdAt: '2025-04-30T10:00:00Z',
+    updatedAt: '2025-05-03T08:30:00Z',
+    userId: 7,
+  },
+  {
+    id: 8,
+    title: 'React Native Mobile Developer',
+    company: 'Pulse Apps',
+    location: 'Remote',
+    source: 'AngelList',
+    url: 'https://angel.co/company/pulseapps/jobs/987654',
+    dateApplied: '2025-05-02T18:45:00Z',
+    status: 'offer',
+    jobType: 'Full-time',
+    notes: 'Waiting on final offer letter.',
+    tags: ['React Native', 'TypeScript', 'iOS', 'Android'],
+    resumeId: 'resume_004.pdf',
+    coverLetter: {
+      id: 'cl_004',
+      content:
+        'I’m thrilled about the opportunity to work with Pulse Apps on mobile innovation...',
+      generated: true,
+    },
+    jobDescription:
+      'We’re hiring a React Native engineer to work across iOS and Android platforms...',
+    aiInsights: {
+      matchScore: 94,
+      suggestedSkills: ['Native Modules', 'Expo', 'Redux'],
+    },
+    emailTracking: {
+      threadId: 'gmail-thread-4',
+      lastEmailSnippet: 'We’re preparing your official offer letter now.',
+      lastUpdatedFromEmail: '2025-05-04T13:00:00Z',
+    },
+    createdAt: '2025-05-02T18:00:00Z',
+    updatedAt: '2025-05-04T13:15:00Z',
+    userId: 7,
+  }
+
   
+ 
+  
+    ];

@@ -9,7 +9,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   imports: [FormsModule, MatFormFieldModule, MatSelectModule],
   templateUrl: './filters.component.html',
   styleUrl: './filters.component.css',
-  encapsulation: ViewEncapsulation.None
 })
 export class FiltersComponent {
   selectedStatus: string = 'all';

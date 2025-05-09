@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { JobCard } from '../../../shared/models/jobCard.model';
 
 @Component({
   selector: 'app-job-card',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './job-card.component.css'
 })
 export class JobCardComponent {
-
+data = input<JobCard>()
 }

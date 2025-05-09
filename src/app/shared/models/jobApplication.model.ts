@@ -9,7 +9,7 @@ export interface JobApplication {
   status: string;
   notes?: string;
   tags: string[];
-
+    jobType: string
   resumeId?: string;
   coverLetter?: {
     id: string;

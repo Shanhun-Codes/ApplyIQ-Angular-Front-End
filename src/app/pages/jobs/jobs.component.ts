@@ -1,14 +1,19 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { FiltersComponent } from "./filters/filters.component";
+import { JobCardComponent } from "./job-card/job-card.component";
+import { JobApplicationService } from '../../shared/services/job-application.service';
 
 @Component({
   selector: 'app-jobs',
   standalone: true,
-  imports: [FiltersComponent],
+  imports: [FiltersComponent, JobCardComponent],
   templateUrl: './jobs.component.html',
   styleUrl: './jobs.component.css',
-  encapsulation: ViewEncapsulation.None
 })
 export class JobsComponent {
+jobApplicationService = inject(JobApplicationService)
+cardData = this.jobApplicationService.getJobCardData()
+
+
 
 }

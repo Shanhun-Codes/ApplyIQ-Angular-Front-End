@@ -1,0 +1,16 @@
+article {
+    border: solid .25px var(--bordersDividers);
+    background-color: var(--background);
+    margin-bottom: .5em;
+    padding: .25em;
+    border-radius: 7.5px;
+}
+
+
+.details {
+    display: flex;
+    justify-content: flex-start;
+}
+span {
+    margin-right: 1em;
+}
