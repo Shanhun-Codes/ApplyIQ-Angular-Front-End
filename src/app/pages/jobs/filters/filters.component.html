@@ -1,0 +1,28 @@
+<div class="filters">
+    <div>
+      <mat-form-field appearance="fill" class="custom-select">
+        <mat-label>Status</mat-label>
+        <mat-select [(ngModel)]="selectedStatus" name="status">
+          <mat-option value="all">All</mat-option>
+          <mat-option value="applied">Applied</mat-option>
+          <mat-option value="interview">Interview</mat-option>
+          <mat-option value="offer">Offer</mat-option>
+          <mat-option value="rejected">Rejected</mat-option>
+          <mat-option value="withdrawn">Withdrawn</mat-option>
+          <mat-option value="saved">Saved</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  
+    <div>
+      <mat-form-field appearance="fill" class="custom-select">
+        <mat-label>Date</mat-label>
+        <mat-select [(ngModel)]="selectedDate" name="dateFilter">
+          <mat-option value="all">All dates</mat-option>
+          <mat-option value="new">Newest</mat-option>
+          <mat-option value="old">Oldest</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  

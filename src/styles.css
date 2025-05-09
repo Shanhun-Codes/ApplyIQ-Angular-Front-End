@@ -1,5 +1,7 @@
-/* Root Variables */
-:root {
+/* ==========================================================================
+   Root Variables
+   ========================================================================== */
+   :root {
     --background: #1a0e1f;
     --primaryAccent: #ff4f5a;
     --secondaryAccent: #ffb3b3;
@@ -10,7 +12,9 @@
     --borderGlow: #ff007a;
   }
   
-  /* Global Styles */
+  /* ==========================================================================
+     Global Reset & Base
+     ========================================================================== */
   *,
   *::before,
   *::after {
@@ -19,17 +23,20 @@
     box-sizing: border-box;
   }
   
-  /* Layout Styles */
   html,
   body {
     height: 100%;
     min-height: 520px;
     margin: 0;
     padding: 0.5em;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     color: var(--textPrimary);
     background-color: var(--background);
   }
   
+  /* ==========================================================================
+     Layout & Structure
+     ========================================================================== */
   .app-layout {
     display: flex;
     flex-direction: column;
@@ -49,21 +56,22 @@
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
-    padding: 1em;
-    box-sizing: border-box;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
   }
   
   app-footer {
     flex-shrink: 0;
   }
   
-  /* Typography & Links */
+  /* ==========================================================================
+     Typography & Links
+     ========================================================================== */
   a {
     color: var(--textSecondary);
+    text-decoration: none;
   }
   
   a:hover {
@@ -71,12 +79,66 @@
     cursor: pointer;
   }
   
-  /* Button & Link Styles */
+  /* ==========================================================================
+     Buttons
+     ========================================================================== */
   button {
     cursor: pointer;
   }
   
-  /* Gradient Text and Borders */
+  /* ==========================================================================
+     Forms & Inputs
+     ========================================================================== */
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1.5em;
+    margin: 1em;
+  }
+  
+  input {
+    margin-bottom: 1em;
+    font-size: 0.75em;
+    padding: 0.25em 0.5em;
+    border-radius: 5px;
+    color: var(--textPrimary);
+    background-color: var(--background);
+    min-width: 300px;
+  }
+  
+  input:focus {
+    border-color: var(--borderGlow);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--borderGlow);
+  }
+  
+  label {
+    margin-bottom: 0.25em;
+  }
+  
+  /* ==========================================================================
+     List Styling
+     ========================================================================== */
+  ul {
+    list-style-type: none;
+  }
+  
+  /* ==========================================================================
+     Gradient Text & Animation
+     ========================================================================== */
+  @keyframes gradient-pingpong {
+    0% {
+      background-position: left;
+    }
+    50% {
+      background-position: right;
+    }
+    100% {
+      background-position: left;
+    }
+  }
+  
   .gradient {
     background: linear-gradient(
       90deg,
@@ -93,12 +155,6 @@
     color: transparent;
   }
   
-  button.gradient,
-  a.gradient:hover,
-  a.gradient:hover > * {
-    background-position: right;
-  }
-  
   .gradient.border {
     border: 2px solid transparent;
     background-position: left;
@@ -111,11 +167,45 @@
     border-image-slice: 1;
   }
   
-  .gradient.border:hover {
+  button.gradient,
+  a.gradient:hover,
+  a.gradient:hover > * {
     background-position: right;
   }
   
-  /* Icon Styling */
+  a.active .gradient,
+  .icon:hover .gradient {
+    animation: gradient-pingpong 3s ease-in-out infinite;
+  }
+  
+  a.active,
+  a:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  
+  /* ==========================================================================
+     Border Effects
+     ========================================================================== */
+  .border-gradient {
+    border: 2px solid transparent;
+    border-radius: 0.5em;
+    background-image: linear-gradient(#1a0e1f, #1a0e1f),
+      linear-gradient(90deg, #ff007a, #550976);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+  
+  /* ==========================================================================
+     Cards
+     ========================================================================== */
+  .card {
+    background-color: var(--cardBackground);
+  }
+  
+  /* ==========================================================================
+     Icons
+     ========================================================================== */
   .icon {
     display: flex;
     flex-direction: column;
@@ -124,58 +214,65 @@
     transition: transform 0.3s ease;
   }
   
-  .icon:hover {
-    color: var(--secondaryAccent);
-    cursor: pointer;
-    transform: scale(1.2); /* Scale up by 10% */
+  /* ==========================================================================
+     Angular Material Select / Form Fields
+     ========================================================================== */
+  
+  /* Outer container */
+  .mat-mdc-form-field {
+    background-color: var(--cardBackground) !important;
   }
   
-  /* Cards */
-  .card {
-    background-color: var(--cardBackground);
+  /* Select dropdown */
+  .mat-mdc-select {
+    background-color: transparent !important;
+    color: var(--textPrimary) !important;
   }
   
-  /* List Styling */
-  ul {
-    list-style-type: none;
+  /* Arrow */
+  .mat-mdc-select-arrow {
+    color: var(--textSecondary) !important;
   }
   
-  /* Border Gradient */
-  .border-gradient {
-    border: 2px solid transparent;
-    border-radius: 0.5em; /* optional */
-    background-image: linear-gradient(#1a0e1f, #1a0e1f), linear-gradient(90deg, #ff007a, #550976);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
+  /* Inner flex wrapper */
+  .mat-mdc-form-field-flex {
+    border-radius: 0.5em;
   }
   
-  /* Forms */
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    font-size: 1.5em;
-    margin: 1em;
+  /* MDC background pill fix */
+  .mat-mdc-text-field-wrapper {
+    background-color: transparent !important;
+    box-shadow: none !important;
   }
   
-  label {
-    margin-bottom: .25em;
+  /* Shrink field height */
+  .mdc-text-field--filled {
+    min-height: min-content !important;
+    max-width: 125px;
+    margin-left: 1.5em;
   }
   
-  /* Input Fields */
-  input {
-    margin-bottom: 1em;
-    font-size: .75em;
-    padding: .25em .5em;
-    border-radius: 5px;
-    color: var(--textPrimary);
-    background-color: var(--background);
-    min-width: 300px;
+  /* Select panel dropdown */
+  .cdk-overlay-pane .mat-mdc-select-panel {
+    background-color: var(--cardBackground) !important;
+    color: var(--textPrimary) !important;
+    border: 1px solid var(--bordersDividers);
+    border-radius: 0.5em;
+    box-shadow: 0 0 8px var(--borderGlow);
   }
   
-  input:focus {
-    border-color: var(--borderGlow); 
-    outline: none; 
-    box-shadow: 0 0 0 2px var(--borderGlow); 
+  /* Options inside dropdown */
+  .cdk-overlay-pane .mat-mdc-option,
+  .cdk-overlay-pane .mdc-list-item {
+    background-color: var(--cardBackground) !important;
+    color: var(--textPrimary) !important;
+    border-radius: 0.25em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cdk-overlay-pane .mat-mdc-option:hover,
+  .cdk-overlay-pane .mat-mdc-option.mdc-list-item--selected {
+    background-color: var(--borderGlow) !important;
+    color: var(--background) !important;
   }
   

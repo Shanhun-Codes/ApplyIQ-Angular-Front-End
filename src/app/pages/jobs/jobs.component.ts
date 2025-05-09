@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { FiltersComponent } from "./filters/filters.component";
 
 @Component({
   selector: 'app-jobs',
   standalone: true,
-  imports: [],
+  imports: [FiltersComponent],
   templateUrl: './jobs.component.html',
-  styleUrl: './jobs.component.css'
+  styleUrl: './jobs.component.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class JobsComponent {
 
