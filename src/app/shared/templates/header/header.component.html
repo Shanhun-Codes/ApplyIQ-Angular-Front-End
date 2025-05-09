@@ -6,12 +6,12 @@
   <nav>
     @if (isLoggedIn()) {
     <a class="icon gradient">
-      <i class="fas fa-user"></i>
+      <i class="gradient fas fa-user"></i>
     </a>
     } @else {
     <ul>
       <li>
-        <a class="gradient border">Login</a>
+        <a routerLink="/sign-in" class="gradient border">Login</a>
       </li>
     </ul>
     }

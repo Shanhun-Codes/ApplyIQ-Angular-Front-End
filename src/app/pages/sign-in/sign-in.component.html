@@ -1,1 +1,37 @@
-<p>sign-in works!</p>
+<section>
+    <form
+      action="submit"
+      [formGroup]="user"
+      (submit)="onSubmitHandler(); $event.preventDefault()"
+    >
+      <label for="email" class="gradient">Email:</label>
+      <input
+        formControlName="email"
+        type="email"
+        name="email"
+        class="border-gradient"
+        autofocus
+        required
+      />
+  
+      <label for="password" class="gradient">Password:</label>
+      <input
+        formControlName="password"
+        type="password"
+        name="Password"
+        class="border-gradient"
+        required
+      />
+  
+      <div class="button-container">
+        <button class="gradient border" type="submit">Login</button>
+      </div>
+    </form>
+    <div class="account-message">
+      <p>
+        Don't have an account?
+        <a class="gradient" routerLink="/signup">Click here</a>
+      </p>
+    </div>
+  </section>
+  

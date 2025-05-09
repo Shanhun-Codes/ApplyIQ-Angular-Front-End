@@ -1,20 +1,20 @@
 <section>
-    <article>
-      <p>{{ info.description }}</p>
-    </article>
-  
-    <div class="border-wrapper sign-up">
-        <a routerLink="/sign-up" class="animated-button"><span class="gradient">Sign Up</span></a>
-      </div>
-      
-  
-    <footer>
-      <p>
-        Powered By
-        <a class="gradient" [href]="info.creatorInfo.website" target="_blank">
-          {{ info.creatorInfo.codingTag }}
-        </a>
-      </p>
-    </footer>
-  </section>
-  
+  <article>
+    <p>{{ info.description }}</p>
+  </article>
+
+  <div class="border-wrapper signup">
+    <a routerLink="/signup" class="animated-button"
+      ><span class="gradient">Sign Up</span></a
+    >
+  </div>
+
+  <footer>
+    <p>
+      Powered By
+      <a class="gradient" [href]="info.creatorInfo.website" target="_blank">
+        {{ info.creatorInfo.codingTag }}
+      </a>
+    </p>
+  </footer>
+</section>
