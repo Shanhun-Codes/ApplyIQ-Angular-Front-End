@@ -1,0 +1,16 @@
+section {
+  align-items: center;
+  justify-content: center;
+}
+
+.button-container {
+  text-align: center;
+}
+
+button {
+  padding: 0.5em 1em;
+}
+
+.account-message {
+  text-align: center;
+}

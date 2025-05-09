@@ -1,21 +1,17 @@
 section {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: space-between;
-    padding: 1em;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%; /* This fills the parent, not the viewport */
   }
-  
+
+
   article {
     text-align: center;
     width: 100%;
   }
-  
 
+  .border-wrapper {
+    text-align: center;
+  }
+  
 
   .sign-up a {
     font-size: 1.5em;
@@ -27,70 +23,61 @@ section {
     padding: 1rem;
     text-align: center;
   }
-  
-  /* Container that wraps the rotating border */
+
   .border-wrapper {
     position: relative;
     display: inline-block;
-    padding: 4px; /* Thickness of the border ring */
-    overflow: hidden; /* Prevents overflow from ::before */
+    padding: 2px; /* border thickness */
+    overflow: hidden;
+    z-index: 0;
   }
   
-  /* Pseudo-element that creates the animated spinning highlight */
   .border-wrapper::before {
     content: '';
     position: absolute;
-    top: -10%;
-    right: -10%;
-    bottom: -10%;
-    left: -10%;
-    z-index: 0;
-  
-    /* Create a mostly transparent ring with a thin rotating highlight */
+    top: 0; right: 0; bottom: 0; left: 0;
     background: conic-gradient(
-        from 0deg,
-        transparent 0deg 100deg,
-        var(--primaryAccent) 100deg 120deg,
-        var(--secondaryAccent) 120deg 140deg,
-        transparent 140deg 360deg
-      );
-      
-  
-    /* Spins the highlight around */
+      from 0deg,
+      transparent 0deg 100deg,
+      var(--primaryAccent) 100deg 120deg,
+      var(--secondaryAccent) 120deg 140deg,
+      transparent 140deg 360deg
+    );
     animation: rotateBorder 2s linear infinite;
+    z-index: 0;
+    pointer-events: none; 
   }
   
-  /* Rotation animation for the conic gradient */
-  @keyframes rotateBorder {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  /* The button itself, sitting above the spinning ring */
   .animated-button {
     position: relative;
-    z-index: 1; /* Above the ::before highlight */
+    z-index: 1;
     display: inline-block;
-    padding: 0.5em 1em;
-    background-color: var(--cardBackground); /* Inner background */
-    color: var(--textPrimary); /* Text color */
-    text-decoration: none;
+    padding: 0.5em 1.25em;
+    background-color: var(--cardBackground);
+    color: var(--textPrimary);
     font-weight: bold;
-  }
-
-  .border-wrapper:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 6px var(--primaryAccent), 0 0 12px var(--secondaryAccent);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease;
   }
   
   .animated-button:hover {
     color: var(--secondaryAccent);
-    transition: color 0.3s ease;
   }
+  
+  .border-wrapper:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 6px var(--primaryAccent), 0 0 12px var(--secondaryAccent);
+    border-radius: 10px;
+  }
+  
+  @keyframes rotateBorder {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  
   
   
