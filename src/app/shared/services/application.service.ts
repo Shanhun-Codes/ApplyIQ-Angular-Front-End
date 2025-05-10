@@ -22,14 +22,19 @@ export class ApplicationService {
   }
 
   getHomePageData() {
+    let offers = 0;
+    let interviews = 0;
     this.applicationData().forEach((a) => {
       if (a.status.toLowerCase() === 'offer') {
-        this.offerCount.update((o) => o + 1);
+        offers++;
       }
       if (a.status.toLowerCase() === 'interview') {
-        this.interviewCount.update((o) => o + 1);
+        interviews++;
       }
     });
+    this.interviewCount.set(interviews);
+    this.offerCount.set(offers);
+
     this.applicationCount.set(this.applicationData().length);
   }
 
