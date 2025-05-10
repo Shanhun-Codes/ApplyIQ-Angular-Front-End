@@ -1,7 +1,7 @@
 import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { FiltersComponent } from "./filters/filters.component";
 import { JobCardComponent } from "./job-card/job-card.component";
-import { JobApplicationService } from '../../shared/services/job-application.service';
+import { JobApplicationService } from '../../shared/services/application.service';
 
 @Component({
   selector: 'app-jobs',

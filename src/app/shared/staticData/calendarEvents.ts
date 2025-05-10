@@ -81,7 +81,7 @@ export default [
         id: 'event6',
         title: 'Offer Call – SuretyBonds.com',
         start: '2025-05-16T14:30:00',
-        end: '2025-05-16T15:00:00',
+        end: '2025-04-16T15:00:00',
         allDay: false,
         backgroundColor: '#e91e63',
         textColor: '#fff',

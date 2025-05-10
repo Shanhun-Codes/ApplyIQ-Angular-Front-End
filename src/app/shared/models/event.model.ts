@@ -1,7 +1,7 @@
 export interface Event {
     id: string;
     title: string;
-    start: string; 
+    start: Date; 
     end?: string;  
     allDay?: boolean;
     backgroundColor?: string;

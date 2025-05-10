@@ -1,23 +1,38 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
+import { JobApplicationService } from '../../shared/services/application.service';
+import { RouterLink } from '@angular/router';
+import { CalendarService } from '../../shared/services/calendar.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, DatePipe],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
-export class HomeComponent implements OnInit{
-authService = inject(AuthService)
-isFirstTime = this.authService.isFirstTime
-landingText: string = ''
+export class HomeComponent implements OnInit {
+  calendarService = inject(CalendarService);
+  applicationService = inject(JobApplicationService);
+  authService = inject(AuthService);
+  isFirstTime = this.authService.isFirstTime;
+  eventData = this.calendarService.homepageEventData;
 
-ngOnInit(): void {
-  if(!this.isFirstTime()) {
-    this.landingText = `Welcome back!`
-  } else {
-  this.landingText = `Welcome!`
-} 
-}
+  applicationCount = this.applicationService.applicationCount;
+  interViewCount = this.applicationService.interviewCount;
+  offerCount = this.applicationService.offerCount;
+
+  landingText: string = '';
+  currentDateAndTime = new Date()
+
+
+  ngOnInit(): void {
+    if (!this.isFirstTime()) {
+      this.landingText = `Welcome back!`;
+    } else {
+      this.landingText = `Welcome!`;
+    }
+    this.applicationService.getHomePageData();
+  }
 }

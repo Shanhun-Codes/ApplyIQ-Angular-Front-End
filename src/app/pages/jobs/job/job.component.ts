@@ -1,6 +1,6 @@
 import { Component, inject, input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { JobApplicationService } from '../../../shared/services/job-application.service';
+import { JobApplicationService } from '../../../shared/services/application.service';
 import { JobApplication } from '../../../shared/models/jobApplication.model';
 import { DatePipe } from '@angular/common';
 
