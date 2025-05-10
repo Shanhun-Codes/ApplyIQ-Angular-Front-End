@@ -1,83 +1,99 @@
+/* ==========================================================================
+   Layout & Structure
+   ========================================================================== */
 section {
-    justify-content: space-between;
-  }
+  justify-content: space-between;
+}
 
+article {
+  text-align: center;
+  width: 100%;
+}
 
-  article {
-    text-align: center;
-    width: 100%;
-  }
+.button-container {
+  text-align: center;
+}
 
-  .border-wrapper {
-    text-align: center;
-  }
-  
+footer {
+  padding: 1rem;
+  text-align: center;
+}
 
-  .sign-up a {
-    font-size: 1.5em;
-    padding: .5em 1em;
-    font-weight: bold;
-  }
-  
-  footer {
-    padding: 1rem;
-    text-align: center;
-  }
+/* ==========================================================================
+     Typography & Links
+     ========================================================================== */
+.sign-up a {
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+  font-weight: bold;
+}
 
-  .border-wrapper {
-    position: relative;
-    display: inline-block;
-    padding: 2px; /* border thickness */
-    overflow: hidden;
-    z-index: 0;
+/* ==========================================================================
+     Animated Border Button
+     ========================================================================== */
+.border-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 2px; /* border thickness */
+  overflow: hidden;
+  z-index: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.border-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 118deg,
+    var(--primaryAccent) 118deg 120deg,
+    var(--secondaryAccent) 120deg 123deg,
+    transparent 122deg 360deg
+  );
+  animation: rotateBorder 2s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.border-wrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 6px var(--primaryAccent), 0 0 12px var(--secondaryAccent);
+  border-radius: 10px;
+}
+
+/* ==========================================================================
+     Animated Button Styling
+     ========================================================================== */
+.animated-button {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0.5em 1.25em;
+  background-color: var(--cardBackground);
+  color: var(--textPrimary);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.animated-button:hover {
+  color: var(--secondaryAccent);
+}
+
+/* ==========================================================================
+     Animations
+     ========================================================================== */
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .border-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    background: conic-gradient(
-      from 0deg,
-      transparent 0deg 100deg,
-      var(--primaryAccent) 100deg 120deg,
-      var(--secondaryAccent) 120deg 140deg,
-      transparent 140deg 360deg
-    );
-    animation: rotateBorder 2s linear infinite;
-    z-index: 0;
-    pointer-events: none; 
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .animated-button {
-    position: relative;
-    z-index: 1;
-    display: inline-block;
-    padding: 0.5em 1.25em;
-    background-color: var(--cardBackground);
-    color: var(--textPrimary);
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .animated-button:hover {
-    color: var(--secondaryAccent);
-  }
-  
-  .border-wrapper:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 6px var(--primaryAccent), 0 0 12px var(--secondaryAccent);
-    border-radius: 10px;
-  }
-  
-  @keyframes rotateBorder {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  
-  
-  
+}

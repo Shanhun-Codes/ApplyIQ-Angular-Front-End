@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, OnInit, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { NewUser } from '../models/newUser.model';
 import { Router } from '@angular/router';
+import { Credentials } from '../models/credentials.model';
+import { environment } from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root',
@@ -10,9 +12,10 @@ export class AuthService {
   router = inject(Router);
   http = inject(HttpClient);
   isLoggedIn = signal<boolean>(false);
-  currentUser = signal<string>('')
+  currentUser = signal<string>('');
+  isFirstTime = signal<boolean>(false);
 
-  private baseUrl: string = 'http://localhost:3000';
+  private baseUrl: string = environment.apiUrl;
 
   checkTokenAndUpdateStatus(): boolean {
     const token = sessionStorage.getItem('jwt');
@@ -22,7 +25,7 @@ export class AuthService {
     return !!token;
   }
 
-  async signup(newUser: any) {
+  async signup(newUser: NewUser): Promise<void> {
     const signupDataPostFormat = {
       user: {
         email: newUser.email,
@@ -37,16 +40,14 @@ export class AuthService {
         .post(this.baseUrl + '/users', signupDataPostFormat)
         .toPromise();
       console.log('Signup Successful:', res);
-
+      this.isFirstTime.set(true);
       await this.signin(newUser);
-
-      this.router.navigate(['/dashboard']);
     } catch (err) {
       console.error('Signup failed:', err);
     }
   }
 
-  signin(user: any): Promise<void> {
+  signin(user: Credentials): Promise<void> {
     const loginDataFormat = {
       user: {
         email: user.email,
@@ -68,7 +69,8 @@ export class AuthService {
               sessionStorage.setItem('jwt', token);
             }
             this.checkTokenAndUpdateStatus();
-            this.currentUser.set(user)
+            this.currentUser.set(user.email);
+            this.router.navigate(['/dashboard']);
             resolve();
           },
           error: (err) => {
@@ -77,5 +79,12 @@ export class AuthService {
           },
         });
     });
+  }
+
+  logout(): void {
+    sessionStorage.clear();
+    this.checkTokenAndUpdateStatus();
+    this.isFirstTime.set(false);
+    this.router.navigate(['']);
   }
 }

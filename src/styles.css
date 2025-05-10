@@ -1,313 +1,316 @@
 /* ==========================================================================
    Root Variables
    ========================================================================== */
-   :root {
-    --background: #1a0e1f;
-    --primaryAccent: #ff4f5a;
-    --secondaryAccent: #ffb3b3;
-    --textSecondary: #e0e0e0;
-    --textPrimary: #b18cb0;
-    --cardBackground: #0e0812;
-    --bordersDividers: #333;
-    --borderGlow: #ff007a;
-  }
-  
-  /* ==========================================================================
+:root {
+  --background: #1a0e1f;
+  --primaryAccent: #ff4f5a;
+  --secondaryAccent: #ffb3b3;
+  --textSecondary: #e0e0e0;
+  --textPrimary: #b18cb0;
+  --cardBackground: #0e0812;
+  --bordersDividers: #333;
+  --borderGlow: #ff007a;
+}
+
+/* ==========================================================================
      Global Reset & Base
      ========================================================================== */
-  *,
-  *::before,
-  *::after {
-    padding: 0;
-    margin: 0;
-  }
-  
-  html, body {
-    height: 100vh;
-    min-height: 520px;
-    margin: 0;
-    padding: 0.5em; 
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    color: var(--textPrimary);
-    font-weight: lighter;
-    background-color: var(--background);
-    box-sizing: border-box;
-  }
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+}
 
-    /* ==========================================================================
+html,
+body {
+  height: 100vh;
+  min-height: 520px;
+  margin: 0;
+  padding: 0.5em;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: var(--textPrimary);
+  font-weight: lighter;
+  background-color: var(--background);
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
      Main Layout
      ========================================================================== */
-  
-  .app-layout {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    height: 100%; 
-    border: solid var(--bordersDividers);
-    border-radius: 1em;
-    background-color: var(--cardBackground);
-    box-shadow: 0 0 1px var(--borderGlow), 0 0 2px var(--borderGlow);
 
-  }
-  
-  .main-content {
-    flex: 1 1 auto;
-    padding: 1em;
-    overflow-y: auto;
-    min-height: 0; 
-  }
-  
-  app-footer {
-    flex-shrink: 0;
-  }
-  
-  
-  section {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-  }
-  
-  /* ==========================================================================
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  border: solid var(--bordersDividers);
+  border-radius: 1em;
+  background-color: var(--cardBackground);
+  box-shadow: 0 0 1px var(--borderGlow), 0 0 2px var(--borderGlow);
+}
+
+.main-content {
+  flex: 1 1 auto;
+  padding: 1em;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+app-footer {
+  flex-shrink: 0;
+}
+
+section {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
      Typography & Links
      ========================================================================== */
-     h1, h2,h3,h4,h5 {
-        font-weight: lighter;
-        color: var(--textSecondary);
-    }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: lighter;
+  color: var(--textSecondary);
+}
 
-  a {
-    color: var(--textSecondary);
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: var(--secondaryAccent);
-    
-    cursor: pointer;
-  }
-  
-  /* ==========================================================================
+a {
+  color: var(--textSecondary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondaryAccent);
+
+  cursor: pointer;
+}
+
+/* ==========================================================================
      Buttons
      ========================================================================== */
-  button {
-    cursor: pointer;
-  }
-  
-  /* ==========================================================================
+button {
+  cursor: pointer;
+}
+
+/* ==========================================================================
      Forms & Inputs
      ========================================================================== */
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    font-size: 1.5em;
-    margin: 1em;
-  }
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 1.5em;
+  margin: 1em;
+}
+
+input {
+  margin-bottom: 1em;
+  font-size: 0.75em;
+  padding: 0.25em 0.5em;
+  border-radius: 5px;
+  color: var(--textPrimary);
+  background-color: var(--background);
+  min-width: 300px;
+}
+
+input:focus {
+  border-color: var(--borderGlow);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--borderGlow);
+}
+
+label {
+  margin-bottom: 0.25em;
+}
+
+
   
-  input {
-    margin-bottom: 1em;
-    font-size: 0.75em;
-    padding: 0.25em 0.5em;
-    border-radius: 5px;
-    color: var(--textPrimary);
-    background-color: var(--background);
-    min-width: 300px;
-  }
-  
-  input:focus {
-    border-color: var(--borderGlow);
-    outline: none;
-    box-shadow: 0 0 0 2px var(--borderGlow);
-  }
-  
-  label {
-    margin-bottom: 0.25em;
-  }
-  
-  /* ==========================================================================
+
+/* ==========================================================================
      List Styling
      ========================================================================== */
-  ul {
-    list-style-type: none;
-  }
-  
-  /* ==========================================================================
+ul {
+  list-style-type: none;
+}
+
+/* ==========================================================================
      Gradient Text & Animation
      ========================================================================== */
-  @keyframes gradient-pingpong {
-    0% {
-      background-position: left;
-    }
-    50% {
-      background-position: right;
-    }
-    100% {
-      background-position: left;
-    }
-  }
-  
-  .gradient {
-    background: linear-gradient(
-      90deg,
-      var(--textSecondary),
-      var(--primaryAccent),
-      var(--secondaryAccent)
-    );
-    background-size: 300%;
+@keyframes gradient-pingpong {
+  0% {
     background-position: left;
-    transition: background-position 1s ease-in-out;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
   }
-  
-  .gradient.border {
-    border: 2px solid transparent;
-    background-position: left;
-    border-image: linear-gradient(
-      90deg,
-      var(--textSecondary),
-      var(--primaryAccent),
-      var(--secondaryAccent)
-    );
-    border-image-slice: 1;
-  }
-  
-  button.gradient,
-  a.gradient:hover,
-  a.gradient:hover > * {
+  50% {
     background-position: right;
   }
-  
-  a.active .gradient,
-  .icon:hover .gradient {
-    animation: gradient-pingpong 3s ease-in-out infinite;
+  100% {
+    background-position: left;
   }
-  
-  a.active,
-  a:hover {
-    cursor: pointer;
-    transform: scale(1.2);
-  }
-  
-  /* ==========================================================================
+}
+
+.gradient {
+  background: linear-gradient(
+    90deg,
+    var(--textSecondary),
+    var(--primaryAccent),
+    var(--secondaryAccent)
+  );
+  background-size: 300%;
+  background-position: left;
+  transition: background-position 1s ease-in-out;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient.border {
+  border: 2px solid transparent;
+  background-position: left;
+  border-image: linear-gradient(
+    90deg,
+    var(--textSecondary),
+    var(--primaryAccent),
+    var(--secondaryAccent)
+  );
+  border-image-slice: 1;
+}
+
+button.gradient,
+a.gradient:hover,
+a.gradient:hover > * {
+  background-position: right;
+}
+
+a.active .gradient,
+.icon:hover .gradient {
+  animation: gradient-pingpong 3s ease-in-out infinite;
+}
+
+a.active,
+a:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
      Border Effects
      ========================================================================== */
-  .border-gradient {
-    border: 2px solid transparent;
-    border-radius: 0.5em;
-    background-image: linear-gradient(#1a0e1f, #1a0e1f),
-      linear-gradient(90deg, #ff007a, #550976);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-  }
-  
-  /* ==========================================================================
+.border-gradient {
+  border: 2px solid transparent;
+  border-radius: 0.5em;
+  background-image: linear-gradient(#1a0e1f, #1a0e1f),
+    linear-gradient(90deg, #ff007a, #550976);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* ==========================================================================
      Cards
      ========================================================================== */
-  .card {
-    background-color: var(--cardBackground);
-  }
-  
-  /* ==========================================================================
+.card {
+  background-color: var(--cardBackground);
+}
+
+/* ==========================================================================
      Icons
      ========================================================================== */
-  .icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-  }
-  
-  /* ==========================================================================
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+/* ==========================================================================
      Angular Material Select / Form Fields
      ========================================================================== */
-  
-  /* Outer container */
-  .mat-mdc-form-field {
-    background-color: var(--cardBackground) !important;
-  }
-  
-  /* Select dropdown */
-  .mat-mdc-select {
-    background-color: transparent !important;
-    color: var(--textPrimary) !important;
-  }
-  
-  /* Arrow */
-  .mat-mdc-select-arrow {
-    color: var(--textSecondary) !important;
-  }
-  
-  /* Inner flex wrapper */
-  .mat-mdc-form-field-flex {
-    border-radius: 0.5em;
-  }
-  
-  /* MDC background pill fix */
-  .mat-mdc-text-field-wrapper {
-    background-color: transparent !important;
-    box-shadow: none !important;
-  }
-  
-  /* Shrink field height */
-  .mdc-text-field--filled {
-    min-height: min-content !important;
-    max-width: 125px;
-    margin: .5em 0 0 1.5em;
-    background-color: var(--background);
-    border: solid var(--bordersDividers);
-  }
-  
-  /* Select panel dropdown */
-  .cdk-overlay-pane .mat-mdc-select-panel {
-    background-color: var(--cardBackground) !important;
-    color: var(--textPrimary) !important;
-    border: 1px solid var(--bordersDividers);
-    border-radius: 0.5em;
-    box-shadow: 0 0 8px var(--borderGlow);
-  }
-  
-  /* Options inside dropdown */
-  .cdk-overlay-pane .mat-mdc-option,
-  .cdk-overlay-pane .mdc-list-item {
-    background-color: var(--cardBackground) !important;
-    color: var(--textPrimary) !important;
-    border-radius: 0.25em;
-    transition: background-color 0.3s ease;
-  }
-  
-  .cdk-overlay-pane .mat-mdc-option:hover,
-  .cdk-overlay-pane .mat-mdc-option.mdc-list-item--selected {
-    background-color: var(--borderGlow) !important;
-    color: var(--background) !important;
-  }
 
-  .status-applied {
-    color: var(--textPrimary);
-  }
-  
-  .status-interview {
-    color: #ffc107; 
-    font-weight: bold;
-  }
-  
-  .status-rejected {
-    color: #ff4f5a; 
-    text-decoration: line-through;
-  }
-  
-  .status-offer {
-    color: #4caf50; 
-    font-weight: bold;
-  }
+/* Outer container */
+.mat-mdc-form-field {
+  background-color: var(--cardBackground) !important;
+}
 
-  
-  
+/* Select dropdown */
+.mat-mdc-select {
+  background-color: transparent !important;
+  color: var(--textPrimary) !important;
+}
+
+/* Arrow */
+.mat-mdc-select-arrow {
+  color: var(--textSecondary) !important;
+}
+
+/* Inner flex wrapper */
+.mat-mdc-form-field-flex {
+  border-radius: 0.5em;
+}
+
+/* MDC background pill fix */
+.mat-mdc-text-field-wrapper {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Shrink field height */
+.mdc-text-field--filled {
+  min-height: min-content !important;
+  max-width: 125px;
+  margin: 0.5em 0 0 1.5em;
+  background-color: var(--background);
+  border: solid var(--bordersDividers);
+}
+
+/* Select panel dropdown */
+.cdk-overlay-pane .mat-mdc-select-panel {
+  background-color: var(--cardBackground) !important;
+  color: var(--textPrimary) !important;
+  border: 1px solid var(--bordersDividers);
+  border-radius: 0.5em;
+  box-shadow: 0 0 8px var(--borderGlow);
+}
+
+/* Options inside dropdown */
+.cdk-overlay-pane .mat-mdc-option,
+.cdk-overlay-pane .mdc-list-item {
+  background-color: var(--cardBackground) !important;
+  color: var(--textPrimary) !important;
+  border-radius: 0.25em;
+  transition: background-color 0.3s ease;
+}
+
+.cdk-overlay-pane .mat-mdc-option:hover,
+.cdk-overlay-pane .mat-mdc-option.mdc-list-item--selected {
+  background-color: var(--borderGlow) !important;
+  color: var(--background) !important;
+}
+
+.status-applied {
+  color: var(--textPrimary);
+}
+
+.status-interview {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #ff4f5a;
+  text-decoration: line-through;
+}
+
+.status-offer {
+  color: #4caf50;
+  font-weight: bold;
+}

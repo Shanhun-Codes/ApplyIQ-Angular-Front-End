@@ -1,3 +1,9 @@
+section {
+  align-items: center;
+  justify-content: center;
+}
+
+
 .button-container {
     text-align: center;
   }

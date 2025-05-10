@@ -10,14 +10,14 @@ import { AuthService } from '../../shared/services/auth.service';
 })
 export class HomeComponent implements OnInit{
 authService = inject(AuthService)
-currentUser = this.authService.currentUser
+isFirstTime = this.authService.isFirstTime
 landingText: string = ''
 
 ngOnInit(): void {
-  if(this.currentUser()) {
-    this.landingText = `Welcome, ${this.currentUser}`
-  } else {
+  if(!this.isFirstTime()) {
     this.landingText = `Welcome back!`
-  }
+  } else {
+  this.landingText = `Welcome!`
+} 
 }
 }
