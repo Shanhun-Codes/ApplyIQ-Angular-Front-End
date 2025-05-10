@@ -1,0 +1,64 @@
+/* ==========================================================================
+     Angular Material Select / Form Fields
+     ========================================================================== */
+
+/* Outer container */
+.mat-mdc-form-field {
+    background-color: var(--cardBackground) !important;
+  }
+  
+  /* Select dropdown */
+  .mat-mdc-select {
+    background-color: transparent !important;
+    color: var(--textPrimary) !important;
+  }
+  
+  /* Arrow */
+  .mat-mdc-select-arrow {
+    color: var(--textSecondary) !important;
+  }
+  
+  /* Inner flex wrapper */
+  .mat-mdc-form-field-flex {
+    border-radius: 0.5em;
+  }
+  
+  /* MDC background pill fix */
+  .mat-mdc-text-field-wrapper {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  /* Shrink field height */
+  .mdc-text-field--filled {
+    min-height: min-content !important;
+    max-width: 125px;
+    margin: 0.5em 0 0 1.5em;
+    background-color: var(--background);
+    border: solid var(--bordersDividers);
+  }
+  
+  /* Select panel dropdown */
+  .cdk-overlay-pane .mat-mdc-select-panel {
+    background-color: var(--cardBackground) !important;
+    color: var(--textPrimary) !important;
+    border: 1px solid var(--bordersDividers);
+    border-radius: 0.5em;
+    box-shadow: 0 0 8px var(--borderGlow);
+  }
+  
+  /* Options inside dropdown */
+  .cdk-overlay-pane .mat-mdc-option,
+  .cdk-overlay-pane .mdc-list-item {
+    background-color: var(--cardBackground) !important;
+    color: var(--textPrimary) !important;
+    border-radius: 0.25em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cdk-overlay-pane .mat-mdc-option:hover,
+  .cdk-overlay-pane .mat-mdc-option.mdc-list-item--selected {
+    background-color: var(--borderGlow) !important;
+    color: var(--background) !important;
+  }
+  

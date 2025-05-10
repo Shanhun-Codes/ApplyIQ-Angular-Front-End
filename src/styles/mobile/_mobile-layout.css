@@ -1,0 +1,59 @@
+/* ==========================================================================
+     Global Reset & Base
+     ========================================================================== */
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100vh;
+  min-height: 520px;
+  margin: 0;
+  padding: 0.5em;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: var(--textPrimary);
+  font-weight: lighter;
+  background-color: var(--background);
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+     Main Layout
+     ========================================================================== */
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  border: solid var(--bordersDividers);
+  border-radius: 1em;
+  background-color: var(--cardBackground);
+  box-shadow: 0 0 1px var(--borderGlow), 0 0 2px var(--borderGlow);
+}
+
+.main-content {
+  flex: 1 1 auto;
+  padding: 0 1em 1em 1em;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+app-footer {
+  flex-shrink: 0;
+}
+
+section {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}

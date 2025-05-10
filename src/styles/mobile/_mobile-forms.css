@@ -1,0 +1,31 @@
+/* ==========================================================================
+     Forms & Inputs
+     ========================================================================== */
+     form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        font-size: 1.5em;
+        margin: 1em;
+      }
+      
+      input {
+        margin-bottom: 1em;
+        font-size: 0.75em;
+        padding: 0.25em 0.5em;
+        border-radius: 5px;
+        color: var(--textPrimary);
+        background-color: var(--background);
+        min-width: 300px;
+      }
+      
+      input:focus {
+        border-color: var(--borderGlow);
+        outline: none;
+        box-shadow: 0 0 0 2px var(--borderGlow);
+      }
+      
+      label {
+        margin-bottom: 0.25em;
+      }
+      
