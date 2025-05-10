@@ -1,0 +1,60 @@
+<section>
+        <div class="modal-backdrop">
+          <div class="modal-container">
+            <h2>Add New Event</h2>
+            
+            <form [formGroup]="eventForm" (submit)="submitEvent()">
+              <div class="form-row">
+                <label>Title:</label>
+                <input formControlName="title" placeholder="e.g., Google Phone Screen">
+              </div>
+        
+              <div class="form-row">
+                <label>Start:</label>
+                <input type="datetime-local" formControlName="start">
+              </div>
+        
+              <div class="form-row">
+                <label>End:</label>
+                <input type="datetime-local" formControlName="end">
+              </div>
+        
+              <div class="form-row">
+                <label>Job Title:</label>
+                <input formControlName="extendedProps.jobTitle" placeholder="e.g., Senior Frontend Engineer">
+              </div>
+        
+              <div class="form-row">
+                <label>Company:</label>
+                <input formControlName="extendedProps.company" placeholder="e.g., Google">
+              </div>
+        
+              <div class="form-row">
+                <label>Contact:</label>
+                <input formControlName="extendedProps.contact" placeholder="recruiter@company.com">
+              </div>
+        
+              <div class="form-row">
+                <label>Status:</label>
+                <select formControlName="extendedProps.status">
+                  <option value="scheduled">Scheduled</option>
+                  <option value="completed">Completed</option>
+                  <option value="canceled">Canceled</option>
+                </select>
+              </div>
+        
+              <div class="form-row">
+                <label>Notes:</label>
+                <textarea formControlName="extendedProps.notes" rows="3"></textarea>
+              </div>
+        
+              <div class="form-actions">
+                <button type="button" class="btn-secondary" (click)="cancelEvent()">Cancel</button>
+                <button type="submit" class="btn-primary" [disabled]="!eventForm.valid">Save Event</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        
+</section>

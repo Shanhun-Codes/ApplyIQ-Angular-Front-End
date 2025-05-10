@@ -1,1 +1,9 @@
-<p>calendar works!</p>
+<full-calendar #calendarRef [options]="calendarOptions"></full-calendar>
+
+@if (showEventForm()) {
+  <app-event-form 
+    [clickedTime]="clickedTimeForForm()"
+    (formSubmit)="onFormSubmit($event)"
+    (formCancel)="onFormCancel()"
+  ></app-event-form>
+}

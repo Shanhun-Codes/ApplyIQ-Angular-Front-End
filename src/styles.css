@@ -10,6 +10,42 @@
   --cardBackground: #0e0812;
   --bordersDividers: #333;
   --borderGlow: #ff007a;
+  /* 
+  =====================================================================
+  calendar css
+  ================================================================ */
+  /* --fc-small-font-size: .85em; */
+  --fc-page-bg-color: none;
+  --fc-neutral-bg-color: none;
+  --fc-neutral-text-color: none;
+  --fc-border-color: none;
+
+  --fc-button-text-color: #e0e0e0;
+  --fc-button-bg-color: #1a0e1f;
+  --fc-button-border-color: #ff007a;
+  --fc-button-hover-bg-color: #ff007a;
+  --fc-button-hover-border-color: #ff007a;
+  --fc-button-active-bg-color: #ff007a;
+  --fc-button-active-border-color: #ff007a;
+
+  --fc-event-bg-color: #b18cb0;
+  --fc-event-border-color: none;
+  --fc-event-text-color: #e0e0e0;
+  --fc-event-selected-overlay-color: none;
+
+  --fc-more-link-bg-color: none;
+  --fc-more-link-text-color: none;
+
+  --fc-event-resizer-thickness: 100px;
+  --fc-event-resizer-dot-total-width: 100px;
+  --fc-event-resizer-dot-border-width: 100px;
+
+  --fc-non-business-color: none;
+  --fc-bg-event-color: none;
+  --fc-bg-event-opacity: none;
+  --fc-highlight-color: rgba(188, 232, 241, 0.3);
+  --fc-today-bg-color: #1a0e1f;
+  --fc-now-indicator-color: red;
 }
 
 /* ==========================================================================
@@ -52,7 +88,7 @@ body {
 
 .main-content {
   flex: 1 1 auto;
-  padding: 1em;
+  padding: 0 1em 1em 1em;
   overflow-y: auto;
   min-height: 0;
 }
@@ -81,6 +117,10 @@ h4,
 h5 {
   font-weight: lighter;
   color: var(--textSecondary);
+}
+
+h2 {
+    font-size: 2em;
 }
 
 a {
