@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
-import { JobApplicationService } from '../../shared/services/application.service';
+import { ApplicationService } from '../../shared/services/application.service';
 import { RouterLink } from '@angular/router';
 import { CalendarService } from '../../shared/services/calendar.service';
 import { DatePipe } from '@angular/common';
@@ -14,7 +14,7 @@ import { DatePipe } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
   calendarService = inject(CalendarService);
-  applicationService = inject(JobApplicationService);
+  applicationService = inject(ApplicationService);
   authService = inject(AuthService);
   isFirstTime = this.authService.isFirstTime;
   eventData = this.calendarService.homepageEventData;

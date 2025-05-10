@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { JobCard } from '../../../shared/models/jobCard.model';
+import { ApplicationCard } from '../../../shared/models/applicationCard.model';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,8 +9,8 @@ import { RouterLink } from '@angular/router';
   templateUrl: './job-card.component.html',
   styleUrl: './job-card.component.css'
 })
-export class JobCardComponent {
-data = input<JobCard>()
+export class ApplicationCardComponent {
+data = input<ApplicationCard>()
 
 
 getStatusClass(): string {

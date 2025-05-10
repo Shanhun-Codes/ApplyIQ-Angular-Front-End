@@ -1,22 +1,28 @@
-import { Injectable, signal } from '@angular/core';
-import { JobApplication } from '../models/jobApplication.model';
-import JOB_DUMMY_DATA from '../staticData/jobApplications';
-import { JobCard } from '../models/jobCard.model';
+import { computed, Injectable, OnInit, signal } from '@angular/core';
+import { Application } from '../models/application.model';
+import JOB_DUMMY_DATA from '../staticData/applications';
+import { ApplicationCard } from '../models/applicationCard.model';
+import { FilterStatus } from '../models/types/filterByStatus.model';
+import { CurrentDateFilter } from '../models/types/filterByDate.model';
+
 @Injectable({
   providedIn: 'root',
 })
-export class JobApplicationService {
-  jobData = signal<JobApplication[]>(JOB_DUMMY_DATA);
+export class ApplicationService {
+  currentStatusFilter = signal<FilterStatus>('all');
+  currentDateFilter = signal<CurrentDateFilter>('new');
+  applicationData = signal<Application[]>(JOB_DUMMY_DATA);
   applicationCount = signal<number>(0);
   interviewCount = signal<number>(0);
   offerCount = signal<number>(0);
+  cardData = computed(() => this.getApplicationCardData());
 
-  getJobData() {
-    return this.jobData();
+  getApplicationData() {
+    return this.applicationData();
   }
 
   getHomePageData() {
-    this.jobData().forEach((a) => {
+    this.applicationData().forEach((a) => {
       if (a.status.toLowerCase() === 'offer') {
         this.offerCount.update((o) => o + 1);
       }
@@ -24,11 +30,35 @@ export class JobApplicationService {
         this.interviewCount.update((o) => o + 1);
       }
     });
-    this.applicationCount.set(this.jobData().length);
+    this.applicationCount.set(this.applicationData().length);
   }
 
-  getJobCardData(): JobCard[] {
-    return this.jobData().map((a) => ({
+  getApplicationCardData(): ApplicationCard[] {
+    const filteredByStatus = this.applicationData().filter((a) => {
+      if (this.currentStatusFilter().toLowerCase() === 'all') {
+        return true;
+      }
+      return (
+        a.status.toLowerCase() === this.currentStatusFilter().toLowerCase()
+      );
+    });
+
+    console.log(filteredByStatus);
+
+    const filteredByDate = filteredByStatus.sort((a, b) => {
+      if (this.currentDateFilter().toLowerCase() === 'new') {
+        return (
+          new Date(b.dateApplied).getTime() - new Date(a.dateApplied).getTime()
+        );
+      } else if (this.currentDateFilter() === 'old') {
+        return (
+          new Date(a.dateApplied).getTime() - new Date(b.dateApplied).getTime()
+        );
+      }
+      return 0;
+    });
+
+    const data = filteredByDate.map((a) => ({
       id: a.id,
       title: a.title,
       company: a.company,
@@ -37,9 +67,13 @@ export class JobApplicationService {
       dateApplied: a.dateApplied,
       status: a.status,
     }));
+    console.log(this.currentStatusFilter());
+    console.log(this.currentDateFilter());
+    console.log(data);
+    return data;
   }
 
-  getJobApplicationById(id: number) {
-    return this.jobData().filter((a) => a.id == id)[0];
+  getApplicationById(id: number) {
+    return this.applicationData().filter((a) => a.id == id)[0];
   }
 }

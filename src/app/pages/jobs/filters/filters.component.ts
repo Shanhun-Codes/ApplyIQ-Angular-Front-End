@@ -1,7 +1,9 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, inject, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {MatSelectModule} from '@angular/material/select'
+import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ApplicationService } from '../../../shared/services/application.service';
+import { FilterStatus } from '../../../shared/models/types/filterByStatus.model';
 
 @Component({
   selector: 'app-filters',
@@ -11,7 +13,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   styleUrl: './filters.component.css',
 })
 export class FiltersComponent {
-  selectedStatus: string = 'all';
-  selectedDate: string = 'new';
+  applicationService = inject(ApplicationService);
+  cardData = this.applicationService.cardData;
+
+  currentStatus = this.applicationService.currentStatusFilter
+  currentDate = this.applicationService.currentDateFilter
   
+ filterHandler() {
+  this.applicationService.getApplicationCardData()
+ }
+
+
 }

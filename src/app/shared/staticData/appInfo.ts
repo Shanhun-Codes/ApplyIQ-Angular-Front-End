@@ -1,4 +1,4 @@
-import type { AppInfo } from '../models/appInfo';
+import type { AppInfo } from '../models/appInfo.model';
 
 const APP_INFO: AppInfo = {
   title: 'ApplyIQ',

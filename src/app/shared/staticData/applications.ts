@@ -10,7 +10,7 @@ export default [
     status: 'Applied',
     jobType: 'Full-time',
     notes: 'Angular-heavy stack. Looks promising.',
-    tags: ['Angular', 'Tailwind', 'Remote', 'Mid-Level'],
+    tags: ['Angular', 'Tailwind', 'Mid-Level'],
     resumeId: 'resume_001.pdf',
     coverLetter: {
       id: 'cl_001',
@@ -73,7 +73,7 @@ export default [
     location: 'Kansas City, MO',
     source: 'Company Site',
     url: 'https://careers.creativesparks.com/jobs/7890',
-    dateApplied: '2025-05-01T11:15:00Z',
+    dateApplied: '2025-05-01T11:20:00Z',
     status: 'Rejected',
     jobType: 'Contract',
     notes: 'Smaller agency. Might revisit later.',
@@ -145,7 +145,7 @@ export default [
     status: 'Applied',
     jobType: 'Full-time',
     notes: 'Angular-heavy stack. Looks promising.',
-    tags: ['Angular', 'Tailwind', 'Remote', 'Mid-Level'],
+    tags: ['Angular', 'Tailwind', 'Mid-Level'],
     resumeId: 'resume_001.pdf',
     coverLetter: {
       id: 'cl_001',

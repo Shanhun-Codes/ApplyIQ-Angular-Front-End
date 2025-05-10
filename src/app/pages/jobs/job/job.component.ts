@@ -1,31 +1,31 @@
 import { Component, inject, input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { JobApplicationService } from '../../../shared/services/application.service';
-import { JobApplication } from '../../../shared/models/jobApplication.model';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ApplicationService } from '../../../shared/services/application.service';
+import { Application } from '../../../shared/models/application.model';
 import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-job',
   standalone: true,
-  imports: [DatePipe],
+  imports: [DatePipe, RouterLink],
   templateUrl: './job.component.html',
   styleUrl: './job.component.css',
 })
 export class JobComponent implements OnInit {
-  jobApplicationService = inject(JobApplicationService);
+  applicationService = inject(ApplicationService);
   private route = inject(ActivatedRoute);
   jobId!: string;
-  data!: JobApplication;
+  data!: Application;
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.jobId = params.get('id')!;
     });
-    this.data = this.getJobApplicationById();
+    this.data = this.getApplicationById();
   }
 
-  getJobApplicationById() {
-    return this.jobApplicationService.getJobApplicationById(+this.jobId);
+  getApplicationById() {
+    return this.applicationService.getApplicationById(+this.jobId);
   }
 
   getStatusClass(): string {

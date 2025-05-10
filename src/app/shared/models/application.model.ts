@@ -1,4 +1,4 @@
-export interface JobApplication {
+export interface Application {
   id: number;
   title: string;
   company: string;

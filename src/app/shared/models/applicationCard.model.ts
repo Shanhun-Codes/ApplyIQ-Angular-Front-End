@@ -1,4 +1,4 @@
-export interface JobCard {
+export interface ApplicationCard {
     id: number,
     title: string,
     company: string,

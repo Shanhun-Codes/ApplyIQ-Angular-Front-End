@@ -6,6 +6,7 @@
 @import './partials/_application-status.css';
 @import './partials/_list.css';
 @import './partials/_cards.css';
+@import './partials/_navigation-arrow.css';
 
 /* Mobile-specific imports */
 @import './mobile/_mobile-forms.css';
