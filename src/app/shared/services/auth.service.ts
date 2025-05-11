@@ -15,7 +15,7 @@ export class AuthService {
   currentUser = signal<string>('');
   isFirstTime = signal<boolean>(false);
 
-  private baseUrl: string = environment.apiUrl;
+  private baseUrl: string = 'https://applyiq-rails-api.onrender.com';
 
   checkTokenAndUpdateStatus(): boolean {
     const token = sessionStorage.getItem('jwt');
