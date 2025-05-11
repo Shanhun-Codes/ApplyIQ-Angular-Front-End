@@ -62,7 +62,7 @@ export class AuthService {
         })
         .subscribe({
           next: (res) => {
-            const token = res.headers.get('Authorization');
+            const token = res.headers.get('authorization');
             console.log('Login successful');
 
             if (token) {
