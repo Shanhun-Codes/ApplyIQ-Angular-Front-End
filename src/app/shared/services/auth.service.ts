@@ -64,6 +64,8 @@ export class AuthService {
           next: (res) => {
             const token = res.headers.get('authorization');
             console.log('Login successful');
+            console.log(token);
+            
 
             if (token) {
               sessionStorage.setItem('jwt', token);
