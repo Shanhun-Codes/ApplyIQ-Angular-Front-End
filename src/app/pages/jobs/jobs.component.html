@@ -1,1 +1,7 @@
-<p>jobs works!</p>
+<section>
+    <h2 class="gradient">My Jobs</h2>
+    <app-filters />
+    @for (j of cardData(); track j.id) {
+        <app-job-card [data]="j" />
+    }
+</section>

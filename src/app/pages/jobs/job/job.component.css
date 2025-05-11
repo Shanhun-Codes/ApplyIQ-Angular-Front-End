@@ -1,0 +1,51 @@
+
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 0.25rem; 
+    list-style: none; 
+    padding: 0; 
+    width: fit-content;
+  }
+
+  ul {
+    margin-bottom: .5em;
+
+  }
+
+  li {
+    padding: 0;
+    margin: 0;
+  }
+
+  .teckStack {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+
+  .tech {
+    padding-right: .75em;
+  }
+
+  .status-applied {
+    color: var(--textPrimary);
+  }
+  
+  .status-interview {
+    color: #ffc107; 
+    font-weight: bold;
+  }
+  
+  .status-rejected {
+    color: #ff4f5a; 
+    text-decoration: line-through;
+  }
+  
+  .status-offer {
+    color: #4caf50; 
+    font-weight: bold;
+  }
+
+  

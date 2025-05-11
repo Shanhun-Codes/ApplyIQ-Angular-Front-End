@@ -1,0 +1,1 @@
+export type CurrentDateFilter = 'new' | 'old'

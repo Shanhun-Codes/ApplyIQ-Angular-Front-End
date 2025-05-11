@@ -1,0 +1,17 @@
+<a [routerLink]="['/dashboard/job', data()!.id]">
+    <article>
+        <div [class]="data()!.status.toLowerCase() === 'rejected' ? 'rejected' : 'title'">
+            <h3>{{data()!.title}} &#64; {{data()!.company}}</h3>
+        </div>
+        <div class="details">
+            <div>
+                <span>{{data()!.location}}</span>
+                <span>{{data()!.jobType}}</span>
+            </div>
+            <div class="status">
+                <span [class]="getStatusClass()">{{data()!.status.toUpperCase()}}</span>
+            </div>
+            
+        </div>
+    </article>
+</a>

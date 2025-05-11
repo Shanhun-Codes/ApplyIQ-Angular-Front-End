@@ -1,0 +1,104 @@
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 0.5em;
+    box-sizing: border-box;
+  }
+  
+  .modal-container {
+    background: var(--cardBackground);
+    padding: 2rem;
+    border-radius: 8px;
+    max-height: 90vh;
+    overflow-y: auto;
+    color: var(--textSecondary);
+    box-shadow: 0 0 10px var(--borderGlow);
+    border: 1px solid var(--bordersDividers);
+    width: 100%;
+    max-width: 500px;
+    min-width: 280px;
+    box-sizing: border-box;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+  }
+
+  .modal-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .form-row {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  .form-row label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primaryAccent);
+  }
+  
+  .form-row input[type="text"],
+  .form-row input[type="datetime-local"],
+  .form-row textarea,
+  .form-row select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--bordersDividers);
+    border-radius: 4px;
+    background-color: var(--background);
+    color: var(--textPrimary);
+  }
+  
+  .form-row input[type="text"]::placeholder,
+  .form-row input[type="datetime-local"]::placeholder,
+  .form-row textarea::placeholder {
+    color: var(--textSecondary);
+  }
+  
+  .form-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+  }
+  
+  .btn-primary {
+    background-color: var(--primaryAccent);
+    color: var(--textSecondary);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--secondaryAccent);
+  }
+  
+  .btn-secondary {
+    background-color: var(--cardBackground);
+    color: var(--textPrimary);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--bordersDividers);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--secondaryAccent);
+    color: var(--textSecondary);
+  }
+  
+  @media (max-width: 400px) {
+    .modal-container {
+      padding: .5rem;
+      min-width: unset;
+    }
+  }

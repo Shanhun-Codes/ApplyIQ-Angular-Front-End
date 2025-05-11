@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
-import APP_INFO from '../staticData.ts/appInfo';
-import { AppInfo } from '../models/appInfo';
+import APP_INFO from '../staticData/appInfo';
+import { AppInfo } from '../models/appInfo.model';
 
 @Injectable({
   providedIn: 'root',

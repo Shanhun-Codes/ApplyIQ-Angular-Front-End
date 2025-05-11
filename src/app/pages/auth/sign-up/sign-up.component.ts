@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../../shared/services/auth.service';
 import { RouterLink } from '@angular/router';
+import { NewUser } from '../../../shared/models/newUser.model';
 
 @Component({
   selector: 'app-sign-up',
@@ -11,7 +12,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './sign-up.component.css',
 })
 export class SignUpComponent {
-  authService = inject(AuthService)
+  authService = inject(AuthService);
   newUser = new FormGroup({
     email: new FormControl<string>(''),
     password: new FormControl<string>(''),
@@ -19,7 +20,14 @@ export class SignUpComponent {
   });
 
   onSubmitHandler() {
-    this.authService.signup(this.newUser.value)
+    if (this.newUser.valid) {
+      const { email, password, confirmedPassword } = this.newUser.value;
+      const user: NewUser = {
+        email: email as string,
+        password: password as string,
+        confirmedPassword: confirmedPassword as string,
+      };
+      this.authService.signup(user);
+    }
   }
-
 }

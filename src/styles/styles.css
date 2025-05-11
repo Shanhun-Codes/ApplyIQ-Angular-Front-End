@@ -1,0 +1,25 @@
+@import './partials/_variables.css';
+@import './partials/_buttons.css';
+@import './partials/_gradient.css';
+@import './partials/_dropdown.css';
+@import './partials/_icons.css';
+@import './partials/_application-status.css';
+@import './partials/_list.css';
+@import './partials/_cards.css';
+@import './partials/_navigation-arrow.css';
+
+/* Mobile-specific imports */
+@import './mobile/_mobile-forms.css';
+@import './mobile/_mobile-typography.css';
+@import './mobile/_mobile-layout.css';
+
+
+/* Desktop-specific imports */
+
+
+
+
+
+
+
+

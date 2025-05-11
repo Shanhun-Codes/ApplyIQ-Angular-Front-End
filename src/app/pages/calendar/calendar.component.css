@@ -1,0 +1,9 @@
+full-calendar::-webkit-scrollbar {
+    display: none;
+  }
+
+
+h2 {
+    margin: .5em 0 0 .5em;
+}
+

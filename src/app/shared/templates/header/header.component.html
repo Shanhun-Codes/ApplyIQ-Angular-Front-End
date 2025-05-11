@@ -5,7 +5,7 @@
   </div>
   <nav>
     @if (isLoggedIn()) {
-    <a class="icon gradient">
+    <a routerLink="/dashboard/profile" routerLinkActive="active" class="icon gradient">
       <i class="gradient fas fa-user"></i>
     </a>
     } @else {

@@ -1,5 +1,5 @@
 export interface NewUser {
     email: string
-    passowrd: string
+    password: string
     confirmedPassword: string
 }

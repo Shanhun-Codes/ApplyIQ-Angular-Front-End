@@ -1,0 +1,30 @@
+h1 {
+    font-weight: lighter;
+    font-size: 2.5em;
+}
+
+li{ 
+margin: 1em 0;
+max-width: 300px;
+}
+
+a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.5em;
+    min-height: 1.5em;
+    min-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+a:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 8px var(--primaryAccent);
+  }
+
+i {
+    margin: .5em .25em .5em .5em;
+}

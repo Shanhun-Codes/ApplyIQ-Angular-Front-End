@@ -1,0 +1,18 @@
+
+.navigation-arrow a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px var(--bordersDividers);
+    width: fit-content;
+    padding: .5em;
+    margin: .25em;
+}
+
+.navigation-arrow a:hover {
+    border: solid 1px var(--borderGlow);
+}
+
+.navigation-arrow a i {
+    margin-right: .5em;
+}
