@@ -9,7 +9,7 @@ export class CalendarService {
 events = signal(EVENTS_DATA)
 private _viewType = new BehaviorSubject<string>('dayGridMonth');
 public viewType$ = this._viewType.asObservable();
-homepageEventData = signal<{title: string, start: Date}[]>(this.getEventsForHome())
+homepageEventData = signal<{id: string, title: string, start: Date}[]>(this.getEventsForHome())
 
 getEvents() {
   return this.events()
@@ -17,6 +17,7 @@ getEvents() {
 
 getEventsForHome() {
   return this.events().map((e) => ({
+    id: e.id,
     title: e.title,
     start: new Date(e.start)
   }));

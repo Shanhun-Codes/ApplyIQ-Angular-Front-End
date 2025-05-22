@@ -1,0 +1,22 @@
+.quickInfo-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: .5em;
+  }
+  
+  .info {
+    border: solid 1px;
+    height: 100px;
+    width: 95px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1em;
+    background-color: var(--background);
+    color: var(--textSecondary);
+  }
+  
+  b {
+    font-size: 2em;
+  }

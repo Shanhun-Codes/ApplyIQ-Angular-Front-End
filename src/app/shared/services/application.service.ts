@@ -1,7 +1,7 @@
 import { computed, Injectable, OnInit, signal } from '@angular/core';
-import { Application } from '../models/application.model';
-import JOB_DUMMY_DATA from '../staticData/applications';
-import { ApplicationCard } from '../models/applicationCard.model';
+import { Application } from '../models/interfaces/application/application.model';
+import {JOB_DUMMY_DATA} from '../staticData/applications';
+import { ApplicationCard } from '../models/interfaces/application/applicationCard.model';
 import { FilterStatus } from '../models/types/filterByStatus.model';
 import { CurrentDateFilter } from '../models/types/filterByDate.model';
 

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../../shared/services/auth.service';
 import { RouterLink } from '@angular/router';
-import { NewUser } from '../../../shared/models/newUser.model';
+import { NewUser } from '../../../shared/models/interfaces/user/newUser.model';
 
 @Component({
   selector: 'app-sign-up',

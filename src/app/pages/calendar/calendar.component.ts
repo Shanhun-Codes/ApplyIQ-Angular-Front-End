@@ -23,6 +23,7 @@ export class CalendarComponent {
   showEventForm = signal(false);
 
   clickedTimeForForm = signal<{ start: string; end: string } | null>(null);
+  
   calendarOptions = {
     initialView: 'dayGridMonth',
     plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin],

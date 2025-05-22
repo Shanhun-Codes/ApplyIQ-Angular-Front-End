@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal } from '@angular/core';
-import { NewUser } from '../models/newUser.model';
+import { inject, Injectable, OnInit, signal } from '@angular/core';
+import { NewUser } from '../models/interfaces/user/newUser.model';
 import { Router } from '@angular/router';
-import { Credentials } from '../models/credentials.model';
+import { Credentials } from '../models/interfaces/user/credentials.model';
 import { environment } from '../../../environments/environment'
 
 @Injectable({
@@ -15,7 +15,12 @@ export class AuthService {
   currentUser = signal<string>('');
   isFirstTime = signal<boolean>(false);
 
-  private baseUrl: string = 'https://applyiq-rails-api.onrender.com';
+  private baseUrl: string = environment.apiUrl;
+
+  constructor(){
+    console.log(this.baseUrl);
+    
+  }
 
   checkTokenAndUpdateStatus(): boolean {
     const token = sessionStorage.getItem('jwt');
@@ -34,7 +39,6 @@ export class AuthService {
       },
     };
     console.log(signupDataPostFormat);
-
     try {
       const res = await this.http
         .post(this.baseUrl + '/users', signupDataPostFormat)
@@ -87,6 +91,12 @@ export class AuthService {
     sessionStorage.clear();
     this.checkTokenAndUpdateStatus();
     this.isFirstTime.set(false);
-    this.router.navigate(['']);
+    this.http.delete(this.baseUrl + '/users/sign_out').subscribe({
+      next: (res) => {console.log(res);
+      },
+      error: (err) => {console.error(err);
+      }
+    })
+    this.router.navigate(['/login']);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { ApplicationCard } from '../../../shared/models/applicationCard.model';
+import { ApplicationCard } from '../../../shared/models/interfaces/application/applicationCard.model';
 import { RouterLink } from '@angular/router';
 
 @Component({

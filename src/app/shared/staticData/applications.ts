@@ -1,4 +1,4 @@
-export default [
+export const JOB_DUMMY_DATA = [
   {
     id: 1,
     title: 'Frontend Developer',
@@ -11,9 +11,9 @@ export default [
     jobType: 'Full-time',
     notes: 'Angular-heavy stack. Looks promising.',
     tags: ['Angular', 'Tailwind', 'Mid-Level'],
-    resumeId: 'resume_001.pdf',
+    resume: {id: 1, file: 'resume_001.pdf'},
     coverLetter: {
-      id: 'cl_001',
+      id: 1,
       content:
         "Dear Techify team, I'm excited about this opportunity because...",
       generated: true,
@@ -26,7 +26,7 @@ export default [
       toneSuggestions: 'Keep the tone friendly and confident.',
     },
     emailTracking: {
-      threadId: 'gmail-thread-1',
+      threadId: 1,
       lastEmailSnippet: 'Thanks for applying. We’ll review your application.',
       lastUpdatedFromEmail: '2025-05-06T10:45:00Z',
     },
@@ -45,9 +45,9 @@ export default [
     status: 'Interview',
     jobType: 'Full-time',
     tags: ['React', 'Node.js', 'AWS', 'PostgreSQL'],
-    resumeId: 'resume_002.pdf',
+    resume: {id: 2, file: 'resume_002.pdf'},
     coverLetter: {
-      id: 'cl_002',
+      id: 2,
       content: "I'm excited to bring my full stack expertise to Nebula Labs...",
       generated: true,
     },
@@ -58,7 +58,7 @@ export default [
       suggestedSkills: ['Docker', 'CI/CD', 'TypeScript'],
     },
     emailTracking: {
-      threadId: 'gmail-thread-2',
+      threadId: 2,
       lastEmailSnippet: "We'd like to invite you for a first-round interview.",
       lastUpdatedFromEmail: '2025-05-01T15:30:00Z',
     },
@@ -78,9 +78,9 @@ export default [
     jobType: 'Contract',
     notes: 'Smaller agency. Might revisit later.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
-    resumeId: 'resume_003.pdf',
+    resume: {id: 3, file: 'resume_003.pdf'},
     coverLetter: {
-      id: 'cl_003',
+      id: 3,
       content:
         'As a passionate developer, I’m excited about your mission at Creative Sparks...',
       generated: true,
@@ -92,7 +92,7 @@ export default [
       suggestedSkills: ['SEO', 'jQuery'],
     },
     emailTracking: {
-      threadId: 'gmail-thread-3',
+      threadId: 3,
       lastEmailSnippet: 'We have decided to proceed with other candidates.',
       lastUpdatedFromEmail: '2025-05-03T08:20:00Z',
     },
@@ -112,9 +112,9 @@ export default [
     jobType: 'Full-time',
     notes: 'Waiting on final offer letter.',
     tags: ['React Native', 'TypeScript', 'iOS', 'Android'],
-    resumeId: 'resume_004.pdf',
+    resume: {id: 4, file: 'resume_004.pdf'},
     coverLetter: {
-      id: 'cl_004',
+      id: 4,
       content:
         'I’m thrilled about the opportunity to work with Pulse Apps on mobile innovation...',
       generated: true,
@@ -126,7 +126,7 @@ export default [
       suggestedSkills: ['Native Modules', 'Expo', 'Redux'],
     },
     emailTracking: {
-      threadId: 'gmail-thread-4',
+      threadId: 4,
       lastEmailSnippet: 'We’re preparing your official offer letter now.',
       lastUpdatedFromEmail: '2025-05-04T13:00:00Z',
     },
@@ -146,9 +146,9 @@ export default [
     jobType: 'Full-time',
     notes: 'Angular-heavy stack. Looks promising.',
     tags: ['Angular', 'Tailwind', 'Mid-Level'],
-    resumeId: 'resume_001.pdf',
+    resume: {id: 5, file: 'resume_001.pdf'},
     coverLetter: {
-      id: 'cl_001',
+      id: 5,
       content:
         "Dear Techify team, I'm excited about this opportunity because...",
       generated: true,
@@ -161,7 +161,7 @@ export default [
       toneSuggestions: 'Keep the tone friendly and confident.',
     },
     emailTracking: {
-      threadId: 'gmail-thread-1',
+      threadId: 5,
       lastEmailSnippet: 'Thanks for applying. We’ll review your application.',
       lastUpdatedFromEmail: '2025-05-06T10:45:00Z',
     },
@@ -180,9 +180,9 @@ export default [
     status: 'Interview',
     jobType: 'Full-time',
     tags: ['React', 'Node.js', 'AWS', 'PostgreSQL'],
-    resumeId: 'resume_002.pdf',
+    resume: {id: 6, file: 'resume_001.pdf'},
     coverLetter: {
-      id: 'cl_002',
+      id: 2,
       content: "I'm excited to bring my full stack expertise to Nebula Labs...",
       generated: true,
     },
@@ -193,7 +193,7 @@ export default [
       suggestedSkills: ['Docker', 'CI/CD', 'TypeScript'],
     },
     emailTracking: {
-      threadId: 'gmail-thread-2',
+      threadId: 6,
       lastEmailSnippet: "We'd like to invite you for a first-round interview.",
       lastUpdatedFromEmail: '2025-05-01T15:30:00Z',
     },
@@ -213,9 +213,9 @@ export default [
     jobType: 'Contract',
     notes: 'Smaller agency. Might revisit later.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
-    resumeId: 'resume_003.pdf',
+    resume: {id: 7, file: 'resume_001.pdf'},
     coverLetter: {
-      id: 'cl_003',
+      id: 3,
       content:
         'As a passionate developer, I’m excited about your mission at Creative Sparks...',
       generated: true,
@@ -227,7 +227,7 @@ export default [
       suggestedSkills: ['SEO', 'jQuery'],
     },
     emailTracking: {
-      threadId: 'gmail-thread-3',
+      threadId: 7,
       lastEmailSnippet: 'We have decided to proceed with other candidates.',
       lastUpdatedFromEmail: '2025-05-03T08:20:00Z',
     },
@@ -247,9 +247,9 @@ export default [
     jobType: 'Full-time',
     notes: 'Waiting on final offer letter.',
     tags: ['React Native', 'TypeScript', 'iOS', 'Android'],
-    resumeId: 'resume_004.pdf',
+    resume: {id: 8, file: 'resume_001.pdf'},
     coverLetter: {
-      id: 'cl_004',
+      id: 4,
       content:
         'I’m thrilled about the opportunity to work with Pulse Apps on mobile innovation...',
       generated: true,
@@ -261,7 +261,7 @@ export default [
       suggestedSkills: ['Native Modules', 'Expo', 'Redux'],
     },
     emailTracking: {
-      threadId: 'gmail-thread-4',
+      threadId: 8,
       lastEmailSnippet: 'We’re preparing your official offer letter now.',
       lastUpdatedFromEmail: '2025-05-04T13:00:00Z',
     },
@@ -269,8 +269,5 @@ export default [
     updatedAt: '2025-05-04T13:15:00Z',
     userId: 7,
   }
-
-  
- 
   
     ];

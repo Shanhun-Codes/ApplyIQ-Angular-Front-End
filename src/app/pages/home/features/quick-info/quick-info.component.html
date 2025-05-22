@@ -1,0 +1,17 @@
+<div class="quickInfo-container">
+    <a routerLink="/dashboard/jobs" class="applications info">
+      <p>Total</p>
+      <p>Applications</p>
+      <b>{{ applicationCount() }}</b>
+    </a>
+
+    <a routerLink="/dashboard/jobs" class="interviews info">
+      <p>Interviews</p>
+      <b>{{ interViewCount() }}</b>
+    </a>
+    <a routerLink="/dashboard/jobs" 
+    class="offers info">
+      <p>Offers</p>
+      <b>{{ offerCount() }}</b>
+    </a>
+  </div>

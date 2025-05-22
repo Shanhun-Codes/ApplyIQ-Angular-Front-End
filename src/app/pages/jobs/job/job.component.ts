@@ -1,7 +1,7 @@
 import { Component, inject, input, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ApplicationService } from '../../../shared/services/application.service';
-import { Application } from '../../../shared/models/application.model';
+import { Application } from '../../../shared/models/interfaces/application/application.model';
 import { DatePipe } from '@angular/common';
 
 @Component({
