@@ -18,6 +18,7 @@ export function transformJobApplications(data: any[]): Application[] {
     createdAt: o.created_at,
     updatedAt: o.updated_at,
     userId: o.user_id,
+    resume_id: o.resume?.id,
 
     aiInsights: {
       matchScore: o.ai_insights?.match_score,
@@ -31,10 +32,6 @@ export function transformJobApplications(data: any[]): Application[] {
       lastUpdatedFromEmail: o.email_tracking?.last_updated_from_email,
     },
 
-    resume: {
-      id: o.resume?.id,
-      file: o.resume?.file,
-    },
 
     coverLetter: {
       id: o.cover_letter.id,

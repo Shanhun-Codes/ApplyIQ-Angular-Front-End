@@ -1,10 +1,8 @@
 import { AiInsights } from "./aiInsights.model";
-import { CoverLetter } from "./coverLetter.model";
+import { CoverLetter } from "../coverLetter/coverLetter.model";
 import { EmailTracking } from "./emailTracking.model";
-import { Resume } from "./resume.model";
 
 export interface Application {
-  date_applied: any;
   id: number;
   title: string;
   company: string;
@@ -20,12 +18,11 @@ export interface Application {
   createdAt: string;
   updatedAt: string;
   userId: number;
+  resume_id: number;
   
   aiInsights: AiInsights;
   
   emailTracking: EmailTracking;
-
-  resume: Resume;
 
   coverLetter: CoverLetter ;
 }
