@@ -7,24 +7,27 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './job-card.component.html',
-  styleUrl: './job-card.component.css'
+  styleUrl: './job-card.component.css',
 })
 export class ApplicationCardComponent {
-data = input<ApplicationCard>()
+  data = input<ApplicationCard>();
 
-
-getStatusClass(): string {
-  switch (this.data()!.status.toLowerCase()) {
-    case 'applied':
-      return 'status-applied';
-    case 'interview':
-      return 'status-interview';
-    case 'rejected':
-      return 'status-rejected';
-    case 'offer':
-      return 'status-offer';
-    default:
-      return '';
+  getStatusClass(): string {
+    switch (this.data()!.status.toLowerCase()) {
+      case 'applied':
+        return 'status-applied';
+      case 'interview':
+        return 'status-interview';
+      case 'rejected':
+        return 'status-rejected';
+      case 'offer':
+        return 'status-offer';
+      case 'withdrawn':
+        return 'status-withdrawn';
+      case 'saved':
+        return 'status-saved';
+      default:
+        return 'status-all';
+    }
   }
-}
 }

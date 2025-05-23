@@ -1,10 +1,8 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
 import { ApplicationService } from '../../shared/services/application.service';
-import { RouterLink } from '@angular/router';
 import { CalendarService } from '../../shared/services/calendar.service';
-import { DatePipe } from '@angular/common';
-import { QuickInfoComponent } from "./features/quick-info/quick-info.component";
+import { QuickInfoComponent } from './features/quick-info/quick-info.component';
 import { NextStepsComponent } from './features/next-steps/next-steps.component';
 
 @Component({
@@ -21,11 +19,8 @@ export class HomeComponent implements OnInit {
   isFirstTime = this.authService.isFirstTime;
   eventData = this.calendarService.homepageEventData;
 
-
-
   landingText: string = '';
-  currentDateAndTime = new Date()
-
+  currentDateAndTime = new Date();
 
   ngOnInit(): void {
     if (!this.isFirstTime()) {

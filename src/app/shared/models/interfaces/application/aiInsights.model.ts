@@ -1,5 +1,5 @@
 export interface AiInsights {
-    matchScore: number;
-    suggestedSkills: string[];
+    matchScore?: number;
+    suggestedSkills?: string[];
     toneSuggestions?: string;
   }

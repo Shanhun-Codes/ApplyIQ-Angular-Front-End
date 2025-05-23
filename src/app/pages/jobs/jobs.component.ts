@@ -12,8 +12,11 @@ import { FilterStatus } from '../../shared/models/types/filterByStatus.model';
   templateUrl: './jobs.component.html',
   styleUrl: './jobs.component.css',
 })
-export class JobsComponent {
+export class JobsComponent implements OnInit {
   applicationService = inject(ApplicationService);
   cardData = this.applicationService.cardData;
 
+  ngOnInit(): void {
+    this.applicationService.getApplicationData()
+  }
 }

@@ -4,6 +4,6 @@ export interface ApplicationCard {
     company: string,
     jobType: string
     location: string,
-    dateApplied: string,
+    dateApplied: Date,
     status: string,
 }

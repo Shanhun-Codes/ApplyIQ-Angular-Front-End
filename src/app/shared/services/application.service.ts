@@ -1,24 +1,39 @@
-import { computed, Injectable, OnInit, signal } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
 import { Application } from '../models/interfaces/application/application.model';
-import {JOB_DUMMY_DATA} from '../staticData/applications';
 import { ApplicationCard } from '../models/interfaces/application/applicationCard.model';
 import { FilterStatus } from '../models/types/filterByStatus.model';
 import { CurrentDateFilter } from '../models/types/filterByDate.model';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
+import { transformJobApplications } from '../../utils/transformers/applcation.transformer';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApplicationService {
+  http = inject(HttpClient);
+
+  baseUrl = environment.apiUrl;
+
   currentStatusFilter = signal<FilterStatus>('all');
   currentDateFilter = signal<CurrentDateFilter>('new');
-  applicationData = signal<Application[]>(JOB_DUMMY_DATA);
+  applicationData = signal<Application[]>([]);
   applicationCount = signal<number>(0);
   interviewCount = signal<number>(0);
   offerCount = signal<number>(0);
   cardData = computed(() => this.getApplicationCardData());
 
   getApplicationData() {
-    return this.applicationData();
+    return this.http
+      .get<Application[]>(this.baseUrl + '/job_applications')
+      .subscribe({
+        next: (res) => {
+          this.applicationData.set(transformJobApplications(res));
+        },
+        error: (err) => {
+          console.error('Failed to fetch applications:', err);
+        },
+      });
   }
 
   getHomePageData() {

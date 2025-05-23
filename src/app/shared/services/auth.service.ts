@@ -19,7 +19,6 @@ export class AuthService {
 
   constructor(){
     console.log(this.baseUrl);
-    
   }
 
   checkTokenAndUpdateStatus(): boolean {
